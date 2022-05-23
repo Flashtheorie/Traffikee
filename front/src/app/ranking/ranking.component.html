@@ -1,12 +1,16 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="px-4 sm:px-6 lg:px-8 mt-8">
-    <div class="sm:flex sm:items-center">
-      <div class="sm:flex-auto">
-        <h1 class="text-xl font-semibold text-gray-100">Users</h1>
-        <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p>
+    <div class="flex items-center">
+        <div class="sm:flex-auto">
+        <h1 class="text-3xl font-semibold text-gray-100 font-mono">Webr@nk</h1>
+        <p class="mt-2 text-xl text-gray-200 w-auto font-mono">
+            The more points you earn, the more up you go
+            <br>
+            The more up you go, the more traffic you get
+        </p>
       </div>
       <div class="mt-8 sm:mt-8 sm:ml-16 sm:flex-none">
-        <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-slate-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
+        <button type="button" class="mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-slate-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">
             Add your website</button>
       </div>
     </div>
@@ -20,7 +24,7 @@
             <table class="min-w-full divide-y divide-gray-300">
               <thead class="bg-gray-50">
                 <tr>
-                    <th *ngFor = "let column of headers" class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-6">
+                    <th *ngFor = "let column of headers" class="font-mono py-3 pl-4 pr-3 text-left text-xs font-medium uppercase font-extrabold tracking-wide text-gray-500 sm:pl-6">
                         {{column}}
                       </th>
 
@@ -29,8 +33,8 @@
               </thead>
 <tbody class="divide-y divide-gray-200 bg-white">
   <tr *ngFor="let data of ItemsArray">
-    <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold"><a href="{{data.url}}" target="blank()">{{data.url}}</a></td>
-    <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold">{{data.points}}</td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono"><a href="{{data.url}}" target="blank()">{{data.url}}</a></td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points}}</td>
   </tr>
   
                 
