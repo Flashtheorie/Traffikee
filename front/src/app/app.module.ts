@@ -4,11 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { NavbarofflineComponent } from './navbaroffline/navbaroffline.component';
+import { NavbaronlineComponent } from './navbaronline/navbaronline.component';
+import { RankingComponent } from './ranking/ranking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarofflineComponent,
+    NavbaronlineComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,
