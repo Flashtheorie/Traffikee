@@ -7,14 +7,16 @@ import { HomeComponent } from './home/home.component';
 import { NavbarofflineComponent } from './navbaroffline/navbaroffline.component';
 import { NavbaronlineComponent } from './navbaronline/navbaronline.component';
 import { RankingComponent } from './ranking/ranking.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AddwebsiteComponent } from './addwebsite/addwebsite.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarofflineComponent,
     NavbaronlineComponent,
-    RankingComponent
+    RankingComponent,
+    AddwebsiteComponent
   ],
   imports: [
     BrowserModule,
