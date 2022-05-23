@@ -10,26 +10,32 @@
             Add your website</button>
       </div>
     </div>
-    <div class="mt-8 flex flex-col">
+
+
+
+    <div class="mt-8 flex flex-col w-1/2 m-auto">
       <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
           <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
             <table class="min-w-full divide-y divide-gray-300">
               <thead class="bg-gray-50">
                 <tr>
-                  <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-6">Rank</th>
-                  <th scope="col" class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500">Website</th>
-                  <th scope="col" class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500">Points</th>
+                    <th *ngFor = "let column of headers" class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-6">
+                        {{column}}
+                      </th>
+
                   
                 </tr>
               </thead>
-              <tbody class="divide-y divide-gray-200 bg-white">
-                <tr>
-                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">1</td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><a href="https://google.com" target="blank()">https://google.com</a></td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">1607</td>
-                </tr>
+<tbody class="divide-y divide-gray-200 bg-white">
+  <tr *ngFor="let data of ItemsArray">
+    <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold"><a href="{{data.url}}" target="blank()">{{data.url}}</a></td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold">{{data.points}}</td>
+  </tr>
   
+                
+
+                 
                 <!-- More people... -->
               </tbody>
             </table>

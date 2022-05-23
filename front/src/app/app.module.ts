@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarofflineComponent } from './navbaroffline/navbaroffline.component';
 import { NavbaronlineComponent } from './navbaronline/navbaronline.component';
 import { RankingComponent } from './ranking/ranking.component';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,8 @@ import { RankingComponent } from './ranking/ranking.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

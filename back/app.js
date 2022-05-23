@@ -26,7 +26,32 @@ mongoose.connect(config.DB_URI, function(err, db){
 });
 
 
+app.get('/', function(req, res){
+    db.collection('websites').find({}).sort({ points: -1 }).toArray(function(err, data){
+        if (err) throw err;
+        res.json(data)
+    })
 
+    headers = ["rank", "url", "points"];
+    data = [
+        {
+            rank: 1,
+            url: "http://google.com",
+            points: 12000
+        },
+        {
+            rank: 2,
+            url: "http://google.fr",
+            points: 1200
+        },
+        {
+            rank: 3,
+            url: "http://google.co.uk",
+            points: 120
+        }
+    ]
+    
+})
 
 
 
