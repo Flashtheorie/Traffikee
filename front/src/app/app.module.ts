@@ -8,7 +8,8 @@ import { NavbarofflineComponent } from './navbaroffline/navbaroffline.component'
 import { NavbaronlineComponent } from './navbaronline/navbaronline.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddwebsiteComponent } from './addwebsite/addwebsite.component'
+import { AddwebsiteComponent } from './addwebsite/addwebsite.component';
+import { RedirectComponent } from './redirect/redirect.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { AddwebsiteComponent } from './addwebsite/addwebsite.component'
     NavbarofflineComponent,
     NavbaronlineComponent,
     RankingComponent,
-    AddwebsiteComponent
+    AddwebsiteComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,
