@@ -26,14 +26,18 @@ export class AddwebsiteComponent {
 constructor(
   public http: HttpClient,
   private router: Router,
+  
 ){
-
+this.router = router;
 
 }
 
 login(){
    this.http.post('http://localhost:3001/createwebsite/' + sessionStorage.getItem('id'), this.input)
-    .subscribe(result => {});
+    .subscribe(result => {
+      
+    });
+    this.router.navigate(['/websites'])
 }
 
 }
