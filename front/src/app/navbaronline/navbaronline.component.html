@@ -13,11 +13,11 @@
 				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="websites">Your websites</a></li>
 				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="profile">Your profile</a></li>
 				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="websites">Your websites</a></li>
-				<li class="md:px-4 md:py-2 hover:text-green-900">{{ user[0]['points'] }} points</li>
+				<li class="md:px-4 md:py-2 hover:text-green-900 cursor-default">{{ user[0]['points'] }} points</li>
 			</ul>
 		</div>
 		<div class="order-2 md:order-3">
-			<button class="px-4 py-2 bg-green-600 hover:bg-slate-600 text-green-900 rounded-xl flex items-center gap-2">
+			<button (click)="logout()" routerLink="/login"  class="px-4 py-2 bg-green-600 hover:bg-green-700 text-green-900 rounded-xl flex items-center gap-2">
                 
                 <span>Logout</span>
             </button>

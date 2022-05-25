@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbaronline.component.css']
 })
 export class NavbaronlineComponent  {
+
+  logout(){
+    sessionStorage.clear();
+
+  }
+
+  
   url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
   user = [];
 
