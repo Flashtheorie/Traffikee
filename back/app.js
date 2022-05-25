@@ -25,7 +25,7 @@ mongoose.connect(config.DB_URI, function(err, db){
     console.log('Connected to database');
 });
 
-
+// homepage : Display the websites
 app.get('/', function(req, res){
     db.collection('websites').find({}).sort({ points: -1 }).toArray(function(err, data){
         if (err) throw err;
@@ -33,7 +33,7 @@ app.get('/', function(req, res){
     })
 })
 
-
+// Register the user
 app.post('/register', function(req, res){
     db.collection('users').insertOne({
        email : req.body.email,
@@ -41,11 +41,22 @@ app.post('/register', function(req, res){
    }, function(err, user){
        res.json(user.insertedId)
    })
-
 })
 
+// Log in the user
 
 
+
+
+
+
+// Fetch data from the connected user
+app.get('/users/:id', function(req, res){
+    db.collection('users').find({ _id: ObjectId(`${req.params.id}`)}).toArray(function(err, user){
+        if (err) throw err;
+        res.json(user)
+    })
+})
 
 
 
