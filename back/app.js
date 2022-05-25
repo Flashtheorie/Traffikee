@@ -31,28 +31,18 @@ app.get('/', function(req, res){
         if (err) throw err;
         res.json(data)
     })
-
-    headers = ["rank", "url", "points"];
-    data = [
-        {
-            rank: 1,
-            url: "http://google.com",
-            points: 12000
-        },
-        {
-            rank: 2,
-            url: "http://google.fr",
-            points: 1200
-        },
-        {
-            rank: 3,
-            url: "http://google.co.uk",
-            points: 120
-        }
-    ]
-    
 })
 
+
+app.post('/register', function(req, res){
+    db.collection('users').insertOne({
+       email : req.body.email,
+       password : req.body.password,
+   }, function(err, user){
+       res.json(user.insertedId)
+   })
+
+})
 
 
 

@@ -1,4 +1,5 @@
-<app-navbaroffline></app-navbaroffline>
+<app-navbaroffline *ngIf="getSessionInfos() == null"></app-navbaroffline>
+<app-navbaronline *ngIf="getSessionInfos() != null"></app-navbaronline>
 
 
 <app-ranking></app-ranking>
