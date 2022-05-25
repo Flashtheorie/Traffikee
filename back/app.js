@@ -38,6 +38,7 @@ app.post('/register', function(req, res){
     db.collection('users').insertOne({
        email : req.body.email,
        password : req.body.password,
+       points: 0
    }, function(err, user){
        res.json(user.insertedId)
    })
