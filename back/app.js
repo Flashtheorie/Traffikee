@@ -76,6 +76,7 @@ app.post('/login', function(req, res){
     })
 })
 
+// Fetch the websites from user
 app.get('/websites/:id', function(req, res){
     db.collection('websites').find({ id: req.params.id }).sort({ points: -1 }).toArray(function(err, user){
         if (err) throw err;
@@ -83,6 +84,16 @@ app.get('/websites/:id', function(req, res){
     })
 })
 
+
+// Create new website
+
+app.post('/createwebsite/:id', function(req, res){
+    db.collection('websites').insertOne({
+        url : req.body.url,
+        points: 0,
+        id: req.params.id
+    })
+})
 
 
 app.listen(PORT, function(){

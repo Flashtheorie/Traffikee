@@ -20,7 +20,7 @@ export class LoginComponent  {
 constructor(
   public http: HttpClient,
   private router: Router,
-  private route:ActivatedRoute){
+  ){
 
 
 }
