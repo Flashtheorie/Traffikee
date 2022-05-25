@@ -11,12 +11,12 @@
                 Inactive Link = hover:text-slate-500 -->
 				<li class="md:px-4 md:py-2"><a routerLink="/home">Dashboard</a></li>
 				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="/websites">Your websites</a></li>
-				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="/profil">Account settings</a></li>
+				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="/profil">Settings</a></li>
 				<li class="md:px-4 md:py-2 hover:text-green-900 cursor-default">{{ user[0]['points'] }} points</li>
 			</ul>
 		</div>
 		<div class="order-2 md:order-3">
-			<button (click)="logout()" routerLink="/login"  class="px-4 py-2 bg-green-600 hover:bg-green-700 text-green-900 rounded-xl flex items-center gap-2">
+			<button (click)="logout()" routerLink="/login"  class="px-8 py-2 bg-green-600 hover:bg-green-700 text-green-900 rounded-xl flex items-center gap-2">
                 
                 <span>Logout</span>
             </button>

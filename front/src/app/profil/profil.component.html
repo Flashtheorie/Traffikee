@@ -25,7 +25,12 @@
                     </div>
                     </div>
                     <div class="flex justify-end">
-                        <button class="appearance-none bg-green-500 text-gray-900 px-2 py-1  rounded-md mr-3" type="submit">save changes</button>
+                        <button (click)="rewindHistory()"  class="appearance-none bg-red-500 text-gray-900 px-4 py-2  rounded-md mr-3" type="submit">
+                            Cancel <i class="fa-solid fa-xmark"></i></button>
+
+                        <button class="appearance-none bg-green-500 text-gray-900 px-4 py-2  rounded-md mr-3" type="submit">
+                            save changes <i class="fa-solid fa-check"></i></button>
+
                     </div>
             </form>
         </div>

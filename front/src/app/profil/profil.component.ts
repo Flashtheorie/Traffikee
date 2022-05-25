@@ -10,7 +10,9 @@ export class ProfilComponent  {
   getSessionInfos(){
     return sessionStorage.getItem('id'); 
   }
-
+  rewindHistory(){
+    window.history.back();
+  }
 
   url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
   user = [];
