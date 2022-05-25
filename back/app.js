@@ -25,6 +25,14 @@ mongoose.connect(config.DB_URI, function(err, db){
     console.log('Connected to database');
 });
 
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
+
 // homepage : Display the websites
 app.get('/', function(req, res){
     db.collection('websites').find({}).sort({ points: -1 }).toArray(function(err, data){
@@ -52,12 +60,23 @@ app.post('/register', function(req, res){
 
 
 // Fetch data from the connected user
-app.get('/users/:id', function(req, res){
+app.post('/login', function(req, res){
+    db.collection('users').find({ email: req.body.email, password: req.body.password}).toArray(function(err, user){
+        if (err) throw err;
+        res.json(user[0]._id)
+    })
+})
+
+ 
+
+ app.get('/users/:id', function(req, res){
     db.collection('users').find({ _id: ObjectId(`${req.params.id}`)}).toArray(function(err, user){
         if (err) throw err;
         res.json(user)
     })
 })
+
+
 
 
 
