@@ -31,11 +31,9 @@ constructor(
 
 }
 
-  login(){
-    this.http.post('http://localhost:3001/createwebsite/' + sessionStorage.getItem('id'), this.input)
-        .subscribe(result => {
-
-         })
+login(){
+   this.http.post('http://localhost:3001/createwebsite/' + sessionStorage.getItem('id'), this.input)
+    .subscribe(result => {});
 }
 
 }

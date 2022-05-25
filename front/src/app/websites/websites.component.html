@@ -5,7 +5,7 @@
 <div class="px-4 sm:px-6 lg:px-8 mt-12">
   <div class="flex items-center flex-col sm:flex-row">
       <div class="sm:flex-auto" align="center">
-      <h1 class="text-3xl font-semibold text-gray-100 "><span class="font-mono text-green-500">That's some beautiful websites</span></h1>
+      <h1 class="text-3xl font-semibold text-gray-100 "><span class="font-mono text-green-500">That's some beautiful websites 👀</span></h1>
       <br>
       <p class="mt-2 text-xl text-gray-200 w-auto font-mono">
           This is a list of your websites, you can delete them by clicking <button class="text-red-500 cursor-pointer">"delete"</button>
@@ -40,7 +40,8 @@
   <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono"><a href="{{data.url}}" target="blank()">{{data.url}}</a></td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm  font-mono">
-    <button class="text-red-500 cursor-pointer">delete</button>
+    <input type="hidden" ngModel="{{ data._id }}" >
+    <button class="text-red-500 cursor-pointer" (click)="delete(data._id)">delete</button>
   </td>
 </tr>
 

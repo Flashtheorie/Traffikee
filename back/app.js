@@ -95,6 +95,13 @@ app.post('/createwebsite/:id', function(req, res){
     })
 })
 
+// Delete website
+app.get('/deletewebsite/:id', function(req, res){
+    db.collection('websites').deleteOne({ _id: ObjectId(`${req.params.id}`)}, function(err, user){
+        if (err) throw err;
+        res.json(user)
+    })
+})
 
 app.listen(PORT, function(){
      console.log("Node Js Server is Running on port " + PORT);
