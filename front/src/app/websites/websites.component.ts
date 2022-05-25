@@ -35,8 +35,10 @@ website: any = {
      window.location.reload();
   }
   
-addpoints(id){
-
+addpoints(id, amount){
+  this.http.get('http://localhost:3001/addpoints/' + id + '/' + amount + '/' + sessionStorage.getItem('id'))
+     .subscribe(result => {});
+     window.location.reload();
 }
 
 

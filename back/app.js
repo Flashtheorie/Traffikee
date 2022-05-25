@@ -103,6 +103,24 @@ app.get('/deletewebsite/:id', function(req, res){
     })
 })
 
+// add points to website
+app.get('/addpoints/:id/:amount/:userid', function(req, res){
+    db.collection('websites').updateOne({  _id: ObjectId(`${req.params.id}`) },
+    {
+      $inc: {
+        points: parseInt(req.params.amount)
+      }
+    })
+
+    db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
+    {
+      $inc: {
+        points: parseInt(-req.params.amount)
+      }
+    })
+})
+
+
 app.listen(PORT, function(){
      console.log("Node Js Server is Running on port " + PORT);
  })
