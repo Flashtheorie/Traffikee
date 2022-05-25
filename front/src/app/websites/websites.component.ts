@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { YourwebsitesService } from '../yourwebsites.service';
 import { HttpClient } from '@angular/common/http';
+import { UserDataService } from '../user-data.service'
 @Component({
   selector: 'app-websites',
   templateUrl: './websites.component.html',
@@ -21,8 +22,11 @@ website: any = {
     return sessionStorage.getItem('id'); 
   }
 
+  url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
   
-  headers = ["url", "points", "action"];
+  user: any[] = [];
+  
+  headers = ["url", "points", "add points", "modify"];
   ItemsArray: any[] = [];
   
   delete(id){
@@ -31,10 +35,29 @@ website: any = {
      window.location.reload();
   }
   
-  constructor(private yourwebsites: YourwebsitesService, private http: HttpClient) {}
+addpoints(id){
+
+}
+
+
+
+
+constructor(private yourwebsites: YourwebsitesService, 
+  private http: HttpClient,
+  private userData: UserDataService,
+  ){
+  this.http.get(this.url).toPromise().then((data: any) => {
+  this.user = data
+  })
+}
   ngOnInit() {
     this.yourwebsites.getData().subscribe((res: any[]) => {
       this.ItemsArray = res;
+      console.log(res)
+    });
+
+    this.userData.getData().subscribe((res: any[]) => {
+      this.user = res;
       //console.log(res)
     });
   }
