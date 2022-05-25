@@ -77,7 +77,7 @@ app.post('/login', function(req, res){
 })
 
 app.get('/websites/:id', function(req, res){
-    db.collection('websites').find({ id: req.params.id }).toArray(function(err, user){
+    db.collection('websites').find({ id: req.params.id }).sort({ points: -1 }).toArray(function(err, user){
         if (err) throw err;
         res.json(user)
     })

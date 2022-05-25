@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YourwebsitesService } from '../yourwebsites.service';
 
 @Component({
   selector: 'app-websites',
@@ -6,13 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./websites.component.css']
 })
 export class WebsitesComponent implements OnInit {
+
   getSessionInfos(){
     return sessionStorage.getItem('id'); 
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  headers = ["url", "points", "action"];
+  ItemsArray: any[] = [];
+  
+  constructor(private yourwebsites: YourwebsitesService) {}
+  ngOnInit() {
+    this.yourwebsites.getData().subscribe((res: any[]) => {
+      this.ItemsArray = res;
+      console.log(res)
+    });
   }
-
 }
