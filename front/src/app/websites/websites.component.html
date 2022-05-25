@@ -39,7 +39,7 @@
             </thead>
 <tbody class="divide-y divide-gray-200 bg-white">
 <tr *ngFor="let data of ItemsArray">
-  <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono"><a href="{{data.url}}" target="blank()">{{data.url}}</a></td>
+  <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-not-allowed">{{data.url}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-green-600 font-extrabold font-mono">
     <button *ngIf="user[0].points > 0" class="text-green-200 cursor-pointer font-bold bg-green-600 p-2 rounded-lg" (click)="addpoints(data._id, user[0].points)">Allocate {{ user[0].points }} points</button>
