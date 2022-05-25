@@ -9,7 +9,10 @@ import { NavbaronlineComponent } from './navbaronline/navbaronline.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddwebsiteComponent } from './addwebsite/addwebsite.component';
-import { RedirectComponent } from './redirect/redirect.component'
+import { RedirectComponent } from './redirect/redirect.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,10 @@ import { RedirectComponent } from './redirect/redirect.component'
     NavbaronlineComponent,
     RankingComponent,
     AddwebsiteComponent,
-    RedirectComponent
+    RedirectComponent,
+    PagenotfoundComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

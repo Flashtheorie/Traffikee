@@ -6,6 +6,12 @@ import { RankService } from '../rank.service';
   styleUrls: ['./ranking.component.css']
 })
 export class RankingComponent implements OnInit {
+
+  getSessionInfos(){
+    return sessionStorage.getItem('id'); 
+  }
+
+  
   headers = ["url", "points"];
   ItemsArray: any[] = [];
   
