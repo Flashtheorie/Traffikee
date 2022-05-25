@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addwebsite.component.css']
 })
 export class AddwebsiteComponent implements OnInit {
-
+  getSessionInfos(){
+    return sessionStorage.getItem('id'); 
+  }
   constructor() { }
 
   ngOnInit(): void {
