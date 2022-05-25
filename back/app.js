@@ -120,6 +120,14 @@ app.get('/addpoints/:id/:amount/:userid', function(req, res){
     })
 })
 
+app.get('/visitlink/:userid', function(req, res){
+    db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
+    {
+      $inc: {
+        points: 1
+      }
+    })
+})
 
 app.listen(PORT, function(){
      console.log("Node Js Server is Running on port " + PORT);
