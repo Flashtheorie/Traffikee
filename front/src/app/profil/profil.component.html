@@ -1,0 +1,33 @@
+<app-navbaroffline *ngIf="getSessionInfos() == null"></app-navbaroffline>
+<app-navbaronline *ngIf="getSessionInfos() != null"></app-navbaronline>
+
+
+
+
+
+<!-- component -->
+<!-- component -->
+<div class="bg-slate-900 min-h-screen pt-2 font-mono my-16">
+    <div class="container mx-auto">
+        <div class="inputs w-full max-w-2xl p-6 mx-auto">
+            <h2 class="text-2xl text-gray-100">Account Settings</h2>
+            <form class="mt-6 border-t border-gray-400 pt-4">
+                <div class='flex flex-wrap -mx-3 mb-6'>
+                    <div class='w-full md:w-full px-3 mb-6'>
+                        <label class='block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2' for='grid-text-1'>
+                            email address</label>
+                        <input class='appearance-none block w-full bg-white text-gray-200 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Enter new email'  required>
+                    </div>
+                    <div class='w-full md:w-full px-3 mb-6'>
+                        <label class='block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2' for='grid-text-1'>
+                            password</label>
+                        <input class='appearance-none block w-full bg-white text-gray-200 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='password' placeholder='Enter new password'  required>
+                    </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button class="appearance-none bg-green-500 text-gray-900 px-2 py-1  rounded-md mr-3" type="submit">save changes</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>

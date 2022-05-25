@@ -4,6 +4,7 @@ import { AddwebsiteComponent } from './addwebsite/addwebsite.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ProfilComponent } from './profil/profil.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { RegisterComponent } from './register/register.component';
 import { WebsitesComponent } from './websites/websites.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'websites', component: WebsitesComponent},
+  { path: 'profil', component: ProfilComponent},
 
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent}
 ];
