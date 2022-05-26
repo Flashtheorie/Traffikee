@@ -65,7 +65,7 @@ constructor(private yourwebsites: YourwebsitesService,
   ngOnInit() {
     this.http.get(this.api).subscribe((res: any[]) => {
       this.ItemsArray = res;
-      console.log(res)
+      //console.log(res)
     });
 
     this.userData.getData().subscribe((res: any[]) => {

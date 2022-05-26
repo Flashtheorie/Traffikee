@@ -15,12 +15,12 @@ export class NavbaronlineComponent  {
 
 
   url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
-  user = [];
+  users = [];
 
 
  constructor(private http: HttpClient){
   this.http.get(this.url).toPromise().then((data: any) => {
-  this.user = data
+  this.users = data
   })
 
  

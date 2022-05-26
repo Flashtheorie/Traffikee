@@ -12,7 +12,7 @@
 				<li class="md:px-4 md:py-2"><a routerLink="/home">Dashboard</a></li>
 				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="/websites">Your websites</a></li>
 				<li class="md:px-4 md:py-2 hover:text-green-900"><a routerLink="/profil">Settings</a></li>
-				<li class="md:px-4 md:py-2 hover:text-green-900 cursor-default">{{ user[0]['points']| number : '0.0-0'}} points</li>
+				<li class="md:px-4 md:py-2 hover:text-green-900 cursor-default" *ngFor="let user of users">{{ user.points | number : '0.0-0'}} points</li>
 			</ul>
 		</div>
 		<div class="order-2 md:order-3">
