@@ -39,7 +39,7 @@
             </thead>
 <tbody class="divide-y divide-gray-200 bg-white">
 <tr *ngFor="let data of ItemsArray, let i = index">
-  <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-not-allowed">{{ i + 1}}</td>
+  <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-not-allowed">{{ data.rank}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-not-allowed">{{data.url}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points | number : '0.0-0'}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-green-600 font-extrabold font-mono">

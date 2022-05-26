@@ -40,22 +40,24 @@ app.get('/', function(req, res){
     rank = 0;
 
 db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
-  
+    
   rank++;
   doc.rank = rank;
   delete doc._id;
-  console.log(doc) 
+  console.log(doc)
 
-  
   db.collection('websites').updateMany({},
-    { $set: { rank: rank } },
-    { upsert: true }
+    { $set: { rank: doc.rank } }
 )
+
 })
 
 
     
-  
+    db.collection('websites').find({}).sort({ points: -1 }).toArray(function(err, data){
+        if (err) throw err;
+        res.json(data)
+    })
 
     
       
