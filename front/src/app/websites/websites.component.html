@@ -3,7 +3,7 @@
 
 
 <div class="px-4 sm:px-6 lg:px-8 mt-12">
-  <div class="flex items-center flex-col sm:flex-col lg:flex-row md:flex-col">
+  <div class="flex items-center flex-col sm:flex-col lg:flex-row md:flex-col ">
       <div class="sm:flex-auto" align="center">
       <h1 class="text-3xl font-semibold text-gray-100 "><span class="font-mono text-green-500">That's some beautiful websites 👀</span></h1>
       <br>
@@ -23,8 +23,8 @@
         
     </div>
 
-<div class="mt-8 flex flex-col w-1/2 m-auto overflow">
-    <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+<div class="mt-8 flex flex-col lg:w-1/2 w-full m-auto w-full overscroll-contain">
+    <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8 grow">
       <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
           <table class="min-w-full divide-y divide-gray-300">
@@ -38,7 +38,8 @@
               </tr>
             </thead>
 <tbody class="divide-y divide-gray-200 bg-white">
-<tr *ngFor="let data of ItemsArray">
+<tr *ngFor="let data of ItemsArray, let i = index">
+  <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-not-allowed">{{ i + 1}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-not-allowed">{{data.url}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points | number : '0.0-0'}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-green-600 font-extrabold font-mono">

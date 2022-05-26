@@ -2,7 +2,7 @@
 
 
 
-    <div class="mt-8 flex flex-col w-1/2 m-auto overflow-hidden">
+    <div class="mt-8 flex flex-col w-1/2 m-auto  ">
       <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
           <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
@@ -18,7 +18,7 @@
               </thead>
 <tbody class="divide-y divide-gray-200 bg-white">
   <tr *ngFor="let data of ItemsArray , let i = index">
-    <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer">{{ i + 1 }}</td>
+    <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer">{{ i + 1 }}</td> <!-- Rank -->
     <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer"><a (click)="visitlink(data.url)" href="{{ data.url }}" target="_blank">{{ data.url }}</a></td>
     <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points | number : '0.0-0'}}</td>
   </tr>

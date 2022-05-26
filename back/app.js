@@ -35,10 +35,15 @@ app.use(function(req, res, next) {
 
 // homepage : Display the websites
 app.get('/', function(req, res){
+
+    
     db.collection('websites').find({}).sort({ points: -1 }).toArray(function(err, data){
         if (err) throw err;
         res.json(data)
     })
+
+    
+      
 })
 
 // Register the user
@@ -82,7 +87,33 @@ app.get('/websites/:id', function(req, res){
         if (err) throw err;
         res.json(user)
     })
+
+
+
+
+
+   
+
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Create new website
