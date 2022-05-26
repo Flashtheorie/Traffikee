@@ -9,7 +9,8 @@
       <br>
       <p class="mt-2 text-xl text-gray-200 w-auto font-mono">
           This is a list of your websites, you can delete them by clicking the little bin icon at the end of the line
-         
+         <br> <br>
+         Clic on websites on the <a routerLink="/home" class="text-green-500">Dashboard</a> to get points
           
           
 
@@ -44,7 +45,7 @@
   <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points | number : '0.0-0'}}</td>
   <td class="whitespace-nowrap px-3 py-4 text-sm text-green-600 font-extrabold font-mono">
     <button *ngIf="user[0].points > 0" class="text-green-200 cursor-pointer font-bold bg-green-600 p-2 rounded-lg" (click)="addpoints(data._id, user[0].points)">Allocate {{ user[0].points }} points</button>
-    <button *ngIf="user[0].points == 0" class="text-gray-200 cursor-not-allowed font-bold bg-gray-600 p-2 rounded-lg">Allocate {{ user[0].points }} points</button>
+    <button *ngIf="user[0].points == 0" class="text-gray-200 cursor-not-allowed font-bold bg-gray-600 p-2 rounded-lg">you have no points</button>
   </td>
   <td class="whitespace-nowrap px-3 py-4 text-sm  font-mono">
     <input type="hidden" ngModel="{{ data._id }}" >

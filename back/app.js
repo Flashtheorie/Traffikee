@@ -44,12 +44,13 @@ db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
   rank++;
   doc.rank = rank;
   delete doc._id;
-  console.log(doc)
+  //console.log(doc)
 
-  db.collection('websites').updateMany({},
-    { $set: { rank: doc.rank } }
+  db.collection('websites')
+  .updateOne( //update only one
+  {rank: doc.rank}, //update the one where rank is the sent in parameter doc.rank
+  { $set: { rank: doc.rank } } // if multiple docs have the same rank you should send in more parameters
 )
-
 })
 
 
