@@ -86,7 +86,15 @@ app.post('/register', function(req, res){
 app.post('/login', function(req, res){
     db.collection('users').find({ email: req.body.email, password: req.body.password}).toArray(function(err, user){
         if (err) throw err;
-        res.json(user[0]._id)
+        if (user[0] != null)
+        {
+            res.json(user[0]._id)
+        }
+        else{
+            errorMessage = "User doesnt exist" ;
+            console.error(errorMessage)
+        }
+        
     })
 })
 
