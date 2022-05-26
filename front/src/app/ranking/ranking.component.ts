@@ -22,7 +22,7 @@ export class RankingComponent implements OnInit {
        }, 100)
   }
 
-  headers = ["url", "points"];
+  headers = ["rank","url", "points"];
   ItemsArray: any[] = [];
   
   constructor(private rankService: RankService, private http: HttpClient) {}

@@ -17,7 +17,8 @@
                 </tr>
               </thead>
 <tbody class="divide-y divide-gray-200 bg-white">
-  <tr *ngFor="let data of ItemsArray">
+  <tr *ngFor="let data of ItemsArray , let i = index">
+    <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer">{{ i + 1 }}</td>
     <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer"><a (click)="visitlink(data.url)" href="{{ data.url }}" target="_blank">{{ data.url }}</a></td>
     <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points | number : '0.0-0'}}</td>
   </tr>
