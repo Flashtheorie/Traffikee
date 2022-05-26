@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { YourwebsitesService } from '../yourwebsites.service';
 import { HttpClient } from '@angular/common/http';
 import { UserDataService } from '../user-data.service'
+
+
 @Component({
   selector: 'app-websites',
   templateUrl: './websites.component.html',
   styleUrls: ['./websites.component.css']
 })
+
 export class WebsitesComponent implements OnInit {
   input: any = {
     url: "",
@@ -18,6 +21,12 @@ website: any = {
   id: ""
 };
 
+
+
+
+
+
+
   getSessionInfos(){
     return sessionStorage.getItem('id'); 
   }
@@ -28,6 +37,7 @@ website: any = {
   
   headers = ["rank","url", "points", "allocate points", "modify"];
   ItemsArray: any[] = [];
+  
   
   delete(id){
     this.http.get('http://localhost:3001/deletewebsite/' + id)

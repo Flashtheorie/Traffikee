@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +17,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WebsitesComponent } from './websites/websites.component';
 import { ProfilComponent } from './profil/profil.component';
 import { PaymentComponent } from './payment/payment.component';
+import { UrlPipe } from './url.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,16 +32,20 @@ import { PaymentComponent } from './payment/payment.component';
     LoginComponent,
     WebsitesComponent,
     ProfilComponent,
-    PaymentComponent
+    PaymentComponent,
+    UrlPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    
   ],
-  providers: [],
+  providers: [
+    UrlPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
