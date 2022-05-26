@@ -5,7 +5,7 @@
 <div class="px-4 sm:px-6 lg:px-8 mt-12">
     <div class="flex items-center">
         <div class="sm:flex-auto" align="center">
-        <h1 class="text-3xl font-semibold text-gray-100 "><span class="font-mono text-green-500">Get more traffic with UpRank</span></h1>
+        <h1 class="text-5xl font-semibold text-gray-100 "><span class="font-mono text-green-500">Get more traffic with UpRank</span></h1>
         <br>
         <p class="mt-2 text-xl text-gray-200 w-auto font-mono">
             "The more points you earn, the more up you go
@@ -13,10 +13,16 @@
             The more up you go, the more traffic you get"
             <br>- 
             <li class="list-none">1 clic : 1 point</li>
-            <li class="list-none">1€ : 100 points</li>
+            <li class="list-none">1 euro : 100 points</li>
             <button *ngIf="getSessionInfos() != null" routerLink="/addwebsite" type="button" class="mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto text-green-800 hover:text-green-900">
                 Add your website
               </button>
+
+              <button *ngIf="getSessionInfos() != null" routerLink="/addwebsite" type="button" class="mt-10 mx-2 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto text-green-800 hover:text-green-900">
+                Add your website
+              </button>
+
+
               <button *ngIf="getSessionInfos() == null" routerLink="/login" type="button" class=" mx-2 mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto">
                 Sign in to add your website
               </button>
