@@ -36,11 +36,26 @@ app.use(function(req, res, next) {
 // homepage : Display the websites
 app.get('/', function(req, res){
 
+    var current = null,
+    rank = 0;
+
+db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
+  
+  rank++;
+  doc.rank = rank;
+  delete doc._id;
+  console.log(doc) 
+
+  
+  db.collection('websites').updateMany({},
+    { $set: { rank: rank } },
+    { upsert: true }
+)
+})
+
+
     
-    db.collection('websites').find({}).sort({ points: -1 }).toArray(function(err, data){
-        if (err) throw err;
-        res.json(data)
-    })
+  
 
     
       
