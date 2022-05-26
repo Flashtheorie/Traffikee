@@ -9,17 +9,18 @@ import { ProfilComponent } from './profil/profil.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { RegisterComponent } from './register/register.component';
 import { WebsitesComponent } from './websites/websites.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'addwebsite', component: AddwebsiteComponent},
-  { path: 'redirect/:url', component: RedirectComponent},
+  { path: 'addwebsite', component: AddwebsiteComponent, canActivate: [AuthGuard]},
+  { path: 'redirect/:url', component: RedirectComponent, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'websites', component: WebsitesComponent},
-  { path: 'profil', component: ProfilComponent},
-  { path: 'payment', component: PaymentComponent},
+  { path: 'websites', component: WebsitesComponent, canActivate: [AuthGuard]},
+  { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
+  { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard]},
 
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent}
 ];
