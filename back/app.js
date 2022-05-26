@@ -81,6 +81,7 @@ app.post('/login', function(req, res){
         if (err) throw err;
         if (user[0] != null)
         {
+            console.error('found user : ' + user[0].email)
             res.json(user[0]._id)
         }
         else{

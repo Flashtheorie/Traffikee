@@ -19,7 +19,10 @@
 <tbody class="divide-y divide-gray-200 bg-white">
   <tr *ngFor="let data of ItemsArray , let i = index">
     <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer">{{ data.rank }}</td> <!-- Rank -->
-    <td *ngIf="getSessionInfos() == null" class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono "><a class="cursor-not-allowed">{{ data.url | url }}</a></td>
+    <td *ngIf="getSessionInfos() == null" class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono ">
+      <a *ngIf="data.rank != 1" class="cursor-not-allowed">{{ data.url | url }}</a>
+      <a *ngIf="data.rank == 1" class="cursor-not-allowed text-xl">Your website ?</a>
+    </td>
 
     <!-- if user is online  -->
     <td *ngIf="getSessionInfos() != null" class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer"><a (click)="visitlink(data.url)" href="{{ data.url }}" target="_blank">{{ data.url }}</a></td> 

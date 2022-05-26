@@ -32,7 +32,7 @@ website: any = {
   }
 
   url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
-  
+  api: string = 'http://localhost:3001/websites/' + sessionStorage.getItem('id');
   user: any[] = [];
   
   headers = ["rank","url", "points", "allocate points", "modify"];
@@ -63,7 +63,7 @@ constructor(private yourwebsites: YourwebsitesService,
   })
 }
   ngOnInit() {
-    this.yourwebsites.getData().subscribe((res: any[]) => {
+    this.http.get(this.api).subscribe((res: any[]) => {
       this.ItemsArray = res;
       console.log(res)
     });
