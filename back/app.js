@@ -37,32 +37,32 @@ app.use(function(req, res, next) {
 app.get('/', function(req, res){
 
     var current = null,
-    rank = 0;
+rank = 0;
 
 db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
-    
+
   rank++;
   doc.rank = rank;
-  delete doc._id;
-  //console.log(doc)
+  //delete doc._id;
+  //console.log(doc._id);
 
-  db.collection('websites')
-  .updateOne( //update only one
-  {rank: doc.rank}, //update the one where rank is the sent in parameter doc.rank
-  { $set: { rank: doc.rank } } // if multiple docs have the same rank you should send in more parameters
+  db.collection('websites').updateMany({_id : doc._id},
+    { $set: { rank: doc.rank } },
+    { upsert: true }
 )
+
 })
 
 
     
-    db.collection('websites').find({}).sort({ points: -1 }).toArray(function(err, data){
+    db.collection('websites').find({}).sort({ rank: 1 }).toArray(function(err, data){
         if (err) throw err;
         res.json(data)
     })
 
     
       
-})
+}) 
 
 // Register the user
 app.post('/register', function(req, res){
