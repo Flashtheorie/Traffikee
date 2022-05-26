@@ -1,5 +1,14 @@
-UpRank est un leaderboard publicitaire.
-L'utilisateur paye 1€ et entre son site, il gagne un point.
-Il y a un classement des gens qui ont le plus de points.
-Ceux qui sont au sommet voient la visibilité de leur site exploser du coup.
+# UpRank is an advertising leaderboard.
 
+You add your website to the pool of websites.
+You can click on other websites to earn points.
+Those points can then be used to promote your own website.
+The more points your website have, the higher it will be on the leaderboard.
+
+
+
+# To do list :
+
+- Verifiy that this email isn't already in use
+- Error message if the password is incorrect
+- Error message if the email is already in use
