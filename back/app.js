@@ -33,10 +33,8 @@ app.use(function(req, res, next) {
   });
 
 
-// homepage : Display the websites
+// homepage : Display the websites and update the rank
 app.get('/', function(req, res){
-
-    var current = null,
 rank = 0;
 
 db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
@@ -46,7 +44,7 @@ db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
   //delete doc._id;
   //console.log(doc._id);
 
-  db.collection('websites').updateMany({_id : doc._id},
+  db.collection('websites').updateOne({_id : doc._id},
     { $set: { rank: doc.rank } },
     { upsert: true }
 )
@@ -78,11 +76,6 @@ app.post('/register', function(req, res){
 // Log in the user
 
 
-
-
-
-
-// Fetch data from the connected user
 app.post('/login', function(req, res){
     db.collection('users').find({ email: req.body.email, password: req.body.password}).toArray(function(err, user){
         if (err) throw err;
@@ -100,6 +93,11 @@ app.post('/login', function(req, res){
 
  
 
+
+
+
+
+// Fetch data from the connected user
  app.get('/users/:id', function(req, res){
     db.collection('users').find({ _id: ObjectId(`${req.params.id}`)}).toArray(function(err, user){
         if (err) throw err;
@@ -113,33 +111,7 @@ app.get('/websites/:id', function(req, res){
         if (err) throw err;
         res.json(user)
     })
-
-
-
-
-
-   
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Create new website
@@ -185,6 +157,9 @@ app.get('/visitlink/:userid', function(req, res){
       }
     })
 })
+
+
+
 
 app.listen(PORT, function(){
      console.log("Node Js Server is Running on port " + PORT);
