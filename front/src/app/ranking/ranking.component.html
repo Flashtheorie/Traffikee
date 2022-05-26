@@ -2,30 +2,32 @@
 
 
 
-    <div class="mt-8 flex flex-col w-1/2 m-auto ">
-      <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-          <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-            <table class="min-w-full divide-y divide-gray-300">
-              <thead class="bg-gray-50">
-                <tr>
-                    <th *ngFor = "let column of headers" class="font-mono py-3 pl-4 pr-3 text-left text-xs font-medium uppercase font-extrabold tracking-wide text-gray-500 sm:pl-6">
-                        {{column}}
-                      </th>
-
-                  
-                </tr>
-              </thead>
+<div class="mt-8 flex flex-col w-1/2 m-auto ">
+  <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+      <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-300">
+          <thead class="bg-gray-50">
+            <tr>
+                <th *ngFor = "let column of headers" class="font-mono py-3 pl-4 pr-3 text-left text-xs font-medium uppercase font-extrabold tracking-wide text-gray-500 sm:pl-6">
+                    {{column}}
+                </th>
+              
+            </tr>
+          </thead>
 <tbody class="divide-y divide-gray-200 bg-white">
   <tr *ngFor="let data of ItemsArray , let i = index">
     <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer">{{ data.rank }}</td> <!-- Rank -->
     <td *ngIf="getSessionInfos() == null" class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono ">
       <a *ngIf="data.rank != 1" class="cursor-not-allowed">{{ data.url | url }}</a>
-      <a *ngIf="data.rank == 1" class="cursor-not-allowed text-xl">Your website ?</a>
+      <a *ngIf="data.rank == 1" class="cursor-not-allowed text-xl text-green-600">Your website ?</a>
     </td>
 
     <!-- if user is online  -->
-    <td *ngIf="getSessionInfos() != null" class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer"><a (click)="visitlink(data.url)" href="{{ data.url }}" target="_blank">{{ data.url }}</a></td> 
+    <td *ngIf="getSessionInfos() != null && data.id != getSessionInfos()" class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-pointer"><a (click)="visitlink(data.url)" href="{{ data.url }}" target="_blank">{{ data.url }}</a></td> 
+    <td *ngIf="getSessionInfos() != null && data.id == getSessionInfos()" class="whitespace-nowrap px-3 py-4 text-sm text-green-600 font-extrabold font-mono cursor-pointer"><a (click)="visitlink(data.url)" href="{{ data.url }}" target="_blank">{{ data.url }}</a></td> 
+
+
     <td class="whitespace-nowrap px-3 py-4 text-sm text-slate-600 font-extrabold font-mono">{{data.points | number : '0.0-0'}}</td>
   </tr>
   
