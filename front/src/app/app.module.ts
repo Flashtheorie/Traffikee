@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { WebsitesComponent } from './websites/websites.component';
 import { ProfilComponent } from './profil/profil.component';
-import { PaymentComponent } from './payment/payment.component';
+
 import { UrlPipe } from './url.pipe';
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { UrlPipe } from './url.pipe';
     LoginComponent,
     WebsitesComponent,
     ProfilComponent,
-    PaymentComponent,
+
     UrlPipe
   ],
   imports: [

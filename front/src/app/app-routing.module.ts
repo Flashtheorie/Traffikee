@@ -4,7 +4,6 @@ import { AddwebsiteComponent } from './addwebsite/addwebsite.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { PaymentComponent } from './payment/payment.component';
 import { ProfilComponent } from './profil/profil.component';
 import { RedirectComponent } from './redirect/redirect.component';
 import { RegisterComponent } from './register/register.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'websites', component: WebsitesComponent, canActivate: [AuthGuard]},
   { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
-  { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard]},
 
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent}
 ];
