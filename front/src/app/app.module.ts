@@ -20,6 +20,7 @@ import { ProfilComponent } from './profil/profil.component';
 
 import { UrlPipe } from './url.pipe';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { ErrorComponent } from './error/error.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
     ProfilComponent,
 
     UrlPipe,
-     SplashScreenComponent
+     SplashScreenComponent,
+     ErrorComponent
   ],
   imports: [
     BrowserModule,
