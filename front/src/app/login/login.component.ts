@@ -24,14 +24,29 @@ constructor(
 
 
 }
-
+isError: boolean = false;
+defineIsError(){
+  setTimeout(() => {
+    this.isError = false;
+  }, 3000);
+}
   login(){
     this.http.post('http://localhost:3001/login', this.input)
         .subscribe(result => {
-          const removeQuotes = JSON.stringify(result)
-          const removed = removeQuotes.replaceAll('"', '');
-          sessionStorage.setItem('id', removed)
-         this.router.navigate(['home'])
+          if (result == "error") {
+            this.isError = true;
+            this.defineIsError()
+          }
+          else if (result != "error") {
+            const removeQuotes = JSON.stringify(result)
+            const removed = removeQuotes.replaceAll('"', '');
+            sessionStorage.setItem('id', removed)
+           this.router.navigate(['home'])
+          }
+          
+          
+
+         
          })
 }
 

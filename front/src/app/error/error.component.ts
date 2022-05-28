@@ -18,7 +18,11 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class ErrorComponent {
-  
+  error = {
+    title : 'Incorrect credentials',
+    message : 'This password do not match your credentials'
+  }
+
   isNotification = true;
   
   close(){

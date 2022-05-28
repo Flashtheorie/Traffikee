@@ -86,6 +86,7 @@ app.post('/login', function(req, res){
         }
         else{
             errorMessage = "User doesnt exist" ;
+            res.json('error')
             console.error(errorMessage)
         }
         
