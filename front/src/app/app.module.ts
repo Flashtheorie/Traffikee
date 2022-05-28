@@ -19,6 +19,7 @@ import { WebsitesComponent } from './websites/websites.component';
 import { ProfilComponent } from './profil/profil.component';
 
 import { UrlPipe } from './url.pipe';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { UrlPipe } from './url.pipe';
     WebsitesComponent,
     ProfilComponent,
 
-    UrlPipe
+    UrlPipe,
+     SplashScreenComponent
   ],
   imports: [
     BrowserModule,
