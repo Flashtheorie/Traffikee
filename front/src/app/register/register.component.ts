@@ -10,8 +10,10 @@ import {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-@Input() ErrorTitle: String;
-@Input() ErrorMessage: String;
+  @Input() public  ErrorTitle: string;
+  @Input() public   ErrorMessage: string;
+  title: 'Oh oh';
+  message: 'This email is already in use'
 
   data: any;
   error: boolean | undefined;
@@ -46,10 +48,17 @@ register(){
             this.defineIsError();
           }
           else{
+            if (this.input.email == "" || this.input.email == ""){
+              this.isError = true;
+            }
+            else
+            {
             const removeQuotes = JSON.stringify(result)
             const removed = removeQuotes.replaceAll('"', '');
             sessionStorage.setItem('id', removed)
-            this.router.navigate(['home'])
+            this.router.navigate(['home'])              
+            }
+
           }
           
         })
