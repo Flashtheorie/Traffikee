@@ -39,12 +39,12 @@
   }
   
   .app-loader {
-    background: url("./../../assets/audio.svg");
+    background: url("./../../assets/three-dots.svg");
     background-repeat: no-repeat;
     max-width: 100%;
     background-position: center;
     background-size: contain;
-    width: 100px;
-    height: 100px;
-    margin-top: 70px;
+    width: 80px;
+    height: 80px;
+    
   }
