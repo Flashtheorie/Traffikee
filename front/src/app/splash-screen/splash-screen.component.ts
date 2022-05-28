@@ -8,7 +8,7 @@ import { Component, OnInit } from "@angular/core";
 export class SplashScreenComponent implements OnInit {
   windowWidth: string;
   showSplash = true;
-
+  version: string =  "1.0";
   ngOnInit(): void {
     setTimeout(() => {
       this.windowWidth = "-" + window.innerWidth + "px";

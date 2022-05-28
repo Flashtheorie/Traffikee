@@ -66,7 +66,7 @@ db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
 app.post('/register', function(req, res){
 
     db.collection('users').findOne({ email: req.body.email}, function(err, data){
-        if( data == null) {
+        if( data == null || data == '') {
             db.collection('users').insertOne({
                 email : req.body.email,
                 password : req.body.password,
