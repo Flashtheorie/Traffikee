@@ -10,5 +10,5 @@ The more points your website have, the higher it will be on the leaderboard.
 # To do list :
 
 - Verifiy that this email isn't already in use
-✅ Error message if the password is incorrect
+- ✅ Error message if the password is incorrect
 - Error message if the email is already in use
