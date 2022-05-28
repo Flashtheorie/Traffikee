@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -7,6 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
+  @Input() public  ErrorTitle: string;
+  @Input() public   ErrorMessage: string;
+  title: 'Incorrect credentials';
+  message: 'This password do not match any credentials'
+  
   input: any = {
     email: "",
     password: "",
@@ -49,5 +54,7 @@ defineIsError(){
          
          })
 }
+ngOnInit(){
 
+}
 }

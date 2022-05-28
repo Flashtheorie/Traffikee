@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
-
+import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-error',
   templateUrl: './error.component.html',
@@ -18,10 +18,8 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class ErrorComponent {
-  error = {
-    title : 'Incorrect credentials',
-    message : 'This password do not match your credentials'
-  }
+ title: string;
+ message: string;
 
   isNotification = true;
   

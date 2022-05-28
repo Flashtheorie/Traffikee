@@ -64,13 +64,22 @@ db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
 
 // Register the user
 app.post('/register', function(req, res){
-    db.collection('users').insertOne({
-       email : req.body.email,
-       password : req.body.password,
-       points: 0
-   }, function(err, user){
-       res.json(user.insertedId)
-   })
+
+    db.collection('users').findOne({ email: req.body.email}, function(err, data){
+        if( data == null) {
+            db.collection('users').insertOne({
+                email : req.body.email,
+                password : req.body.password,
+                points: 0
+            }, function(err, user){
+                res.json(user.insertedId)
+            })
+        }
+        else {
+            res.json('error')
+        }
+    })
+    
 })
 
 // Log in the user
