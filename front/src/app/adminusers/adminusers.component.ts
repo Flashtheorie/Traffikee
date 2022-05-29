@@ -9,6 +9,19 @@ import { ListusersService } from '../listusers.service';
 export class AdminusersComponent implements OnInit {
 
   users: any[] = [];
+
+
+  delete(id: string){
+    this.http.get('http://localhost:3001/delete/' + id).toPromise().then((data: any) => {
+      //sessionStorage.clear();
+      window.location.reload();
+   
+     
+    })
+  }
+
+
+  
   
   constructor(private listusersService: ListusersService, private http: HttpClient) {}
   ngOnInit() {

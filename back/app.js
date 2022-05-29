@@ -182,67 +182,13 @@ app.get('/visitlink/:userid', function(req, res){
 
 // Delete user
 app.get('/delete/:id', function (req, res) {
-    db.collection('users').removeOne({  _id: ObjectId(`${req.params.userid}`) },
+    db.collection('users').deleteOne({  _id: ObjectId(`${req.params.id}`) },
     {
       
     }, function(){
         res.json('deleted')
     })
 })
-
-
-
-
-// Payment stripe
-
-app.post('/create-checkout-session/', async (req, res) => {
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: '100 points',
-            },
-            unit_amount: 100,
-          },
-          quantity: 1,
-        },
-      ],
-      mode: 'payment',
-      success_url: 'http://localhost:4200/success',
-      cancel_url: 'http://localhost:4200/cancel',
-    });
-  
-    res.json({ id: session.id });
-  });
-
-  app.post('/order/success', async (req, res) => {
-    const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-    const customer = await stripe.customers.retrieve(session.customer);
-  
-    res.send(`
-      <html>
-        <body>
-          <h1>Thanks for your order, ${customer.name}!</h1>
-        </body>
-      </html>
-    `);
-  });
-
-
-
-
-  app.get('/paymentsuccessredirect/:userid/:points', function(req, res){
-    db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
-    {
-      $inc: {
-        points: parseInt(req.params.points)
-      }
-    })
-})
-
 
 
 
