@@ -3,7 +3,7 @@
 
 
 <div class="px-4 sm:px-6 lg:px-8 mt-12">
-  <div class="flex items-center flex-col sm:flex-col lg:flex-row md:flex-col ">
+  <div class="flex items-center m-10 flex-col sm:flex-col lg:flex-row md:flex-col ">
       <div class="sm:flex-auto" align="center">
       <h1 class="text-3xl font-semibold text-gray-100 "><span class="font-mono text-green-500">That's some beautiful websites 👀</span></h1>
       <br>
@@ -16,7 +16,7 @@
 
          <br>
          <br>
-          <button *ngIf="getSessionInfos() != null" routerLink="/addwebsite" type="button" class="mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto text-green-800 hover:text-green-900">
+          <button *ngIf="ItemsArray.length != 0" routerLink="/addwebsite" type="button" class="mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto text-green-800 hover:text-green-900">
               Add a website
             </button>
             
@@ -24,10 +24,27 @@
         
     </div>
 
-<div class="mt-8 flex flex-col lg:w-1/2 w-full m-auto w-full overscroll-contain">
+<div class="m-8 flex flex-col lg:w-1/2 w-full m-auto w-full overscroll-contain" *ngIf="ItemsArray.length == 0">
     <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8 grow">
       <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+
+
+
+          <button routerLink="/addwebsite" type="button" class="relative block w-full border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <i class="fa-solid fa-globe text-gray-100 fa-2xl"></i>
+            <span class="mt-2 block text-sm font-medium text-gray-100"> Add a website</span>
+          </button>
+
+
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+<div *ngIf="ItemsArray.length != 0">
           <table class="min-w-full divide-y divide-gray-300">
             <thead class="bg-gray-50">
               <tr>
@@ -38,6 +55,7 @@
                 
               </tr>
             </thead>
+
 <tbody class="divide-y divide-gray-200 bg-white">
 <tr *ngFor="let data of ItemsArray, let i = index">
   <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-600 font-extrabold font-mono cursor-not-allowed">{{ data.rank}}</td>
@@ -58,9 +76,19 @@
                
               <!-- More people... -->
             </tbody>
+        
           </table>
+
+
+
+        </div> <!-- If data exists -->
+        
+
+
+
+
+
         </div>
       </div>
-    </div>
-  </div>
+    
 
