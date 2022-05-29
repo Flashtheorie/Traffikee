@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbaronline.component.css']
 })
 export class NavbaronlineComponent  {
-
+  getSessionInfos(){
+    return sessionStorage.getItem('id'); 
+  }
   logout(){
     sessionStorage.clear();
 
