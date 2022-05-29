@@ -24,6 +24,7 @@ import { ErrorComponent } from './error/error.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymentsuccessredirect.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymen
      ErrorComponent,
      CheckoutComponent,
      PaymentsuccessComponent,
-     PaymentsuccessredirectComponent
+     PaymentsuccessredirectComponent,
+     AdminComponent
   ],
   imports: [
     BrowserModule,

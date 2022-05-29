@@ -12,6 +12,7 @@ import { AuthGuard } from './auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymentsuccessredirect.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
   { path: 'paymentsuccess', component: PaymentsuccessComponent},
   { path: 'paymentsuccessredirect', component: PaymentsuccessredirectComponent},
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
 
 
   
