@@ -169,8 +169,15 @@ app.get('/visitlink/:userid', function(req, res){
     })
 })
 
-
-
+// Delete user
+app.get('/delete/:id', function (req, res) {
+    db.collection('users').removeOne({  _id: ObjectId(`${req.params.userid}`) },
+    {
+      
+    }, function(){
+        res.json('deleted')
+    })
+})
 
 app.listen(PORT, function(){
      console.log("Node Js Server is Running on port " + PORT);

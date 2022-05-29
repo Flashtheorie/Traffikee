@@ -47,8 +47,18 @@ export class ProfilComponent  {
   }
 
   url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
+  urldelete = 'http://localhost:3001/delete/' + sessionStorage.getItem('id');
   users = [];
 
+
+  delete(){
+    this.http.get(this.urldelete).toPromise().then((data: any) => {
+      sessionStorage.clear();
+
+   
+     
+    })
+  }
 
  constructor(private http: HttpClient){
   this.http.get(this.url).toPromise().then((data: any) => {

@@ -84,9 +84,7 @@
             
             <div class="border-t border-gray-400 mb-10">
                 <br>
-                <i class=" text-gray-100">
-                    By deleting your account, you also delete all the websites linked to it.
-                </i>
+                
             <div class="flex justify-end mt-10 ">
                 
 
@@ -156,12 +154,20 @@
             <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Delete your account</h3>
             <div class="mt-2">
               <p class="text-sm text-gray-500">Are you sure you want to delete your account? 
-                  <br> All of your data will be permanently removed from our servers forever. This action cannot be undone.</p>
+                  <br> All of your data will be permanently removed from our servers forever. This action cannot be undone.
+                <br>
+                <br>
+                  <strong class="text-red-500">Your websites WILL NOT BE DELETED</strong> 
+                  <br> <br>
+                  If you wish to delete the websites before deleting your account, you can do so in the 
+                  <strong>"Your websites"</strong> section.
+
+                </p>
             </div>
           </div>
         </div>
         <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-          <button type="button" (click)="toggleModal()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">Delete forever</button>
+          <button type="button" (click)="delete()" routerLink="/home" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-500 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white sm:ml-3 sm:w-auto sm:text-sm">Delete forever</button>
           <button type="button" (click)="toggleModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm">Cancel</button>
         </div>
       </div>
