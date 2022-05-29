@@ -53,7 +53,7 @@ db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
 
 
     
-    db.collection('websites').find({}).sort({ rank: 1 }).toArray(function(err, data){
+    db.collection('websites').find({}).limit(50).sort({ rank: 1 }).toArray(function(err, data){
         if (err) throw err;
         res.json(data)
     })
