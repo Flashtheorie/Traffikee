@@ -9,6 +9,12 @@ import { StripeService } from 'ngx-stripe';
   templateUrl: './checkout.component.html'
 })
 export class CheckoutComponent {
+
+  getSessionInfos(){
+    return sessionStorage.getItem('id'); 
+  }
+
+  
   constructor(
     private http: HttpClient,
     private stripeService: StripeService

@@ -23,6 +23,7 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { ErrorComponent } from './error/error.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
+import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymentsuccessredirect.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.compone
      SplashScreenComponent,
      ErrorComponent,
      CheckoutComponent,
-     PaymentsuccessComponent
+     PaymentsuccessComponent,
+     PaymentsuccessredirectComponent
   ],
   imports: [
     BrowserModule,

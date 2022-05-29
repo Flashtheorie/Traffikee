@@ -11,6 +11,7 @@ import { WebsitesComponent } from './websites/websites.component';
 import { AuthGuard } from './auth.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
+import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymentsuccessredirect.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
   { path: 'checkout', component: CheckoutComponent},
   { path: 'paymentsuccess', component: PaymentsuccessComponent},
-
+  { path: 'paymentsuccessredirect', component: PaymentsuccessredirectComponent},
 
 
   
