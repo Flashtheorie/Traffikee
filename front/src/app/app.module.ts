@@ -25,6 +25,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymentsuccessredirect.component';
 import { AdminComponent } from './admin/admin.component';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { AdminComponent } from './admin/admin.component';
     RouterModule,
     BrowserAnimationsModule,
     NgxStripeModule.forRoot('pk_test_51L3TjKFkiBiEQqb0Aheqhc12TjQVNlMrj7DlZnRxx008J2PSqjvrqzIOrHIMr5N6YaU1BehQIikijwzOYplf737r00ZGkrz2y6'),
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
