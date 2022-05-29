@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
-
   title :string = 'Incorrect credentials';
   message :string = 'This password do not match any credentials';
 

@@ -10,8 +10,7 @@ import {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  @Input() public  ErrorTitle: string;
-  @Input() public   ErrorMessage: string;
+
   title :string = "You can't use this email address";
   message :string = 'This email is already in use';
 
