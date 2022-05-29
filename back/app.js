@@ -62,6 +62,17 @@ db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
       
 }) 
 
+
+// list all users
+app.get('/allusers', function(req, res) {
+  db.collection('users').find({}).sort({ points: 1 }).toArray(function(err, data){
+    if (err) throw err;
+    res.json(data)
+})
+ 
+})
+
+
 // Register the user
 app.post('/register', function(req, res){
 

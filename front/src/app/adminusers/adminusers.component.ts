@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { ListusersService } from '../listusers.service';
 @Component({
   selector: 'app-adminusers',
   templateUrl: './adminusers.component.html',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminusersComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  users: any[] = [];
+  
+  constructor(private listusersService: ListusersService, private http: HttpClient) {}
+  ngOnInit() {
+    this.listusersService.getData().subscribe((res: any[]) => {
+      this.users = res;
+    });
   }
 
 }

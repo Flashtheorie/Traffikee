@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { RankService } from '../rank.service';
+
 
 @Component({
   selector: 'app-adminwebsites',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminwebsites.component.css']
 })
 export class AdminwebsitesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  ItemsArray: any[] = [];
+ 
+  constructor(private rankService: RankService, private http: HttpClient) {}
+  ngOnInit() {
+    this.rankService.getData().subscribe((res: any[]) => {
+      this.ItemsArray = res;
+    });
   }
 
 }

@@ -83,11 +83,11 @@
                         
                       </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 bg-white">
-                      <tr>
-                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">https://www.url.com</td>
-                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">antoinepascualmail@gmail.com</td>
-                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">8</td>
+                    <tbody class="divide-y divide-gray-200 bg-gray-100">
+                      <tr *ngFor="let data of ItemsArray , let i = index">
+                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ data.url }}</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.id }}</td>
+                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ data.points }}</td>
                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                          
                             <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-red-500 text-sm font-medium text-gray-100 hover:bg-red-600 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">delete</button>
