@@ -15,11 +15,15 @@ export class AdminComponent implements OnInit {
     plugins: {
       
     }
+    
   };
   public pieChartData: ChartData<'pie', number[], string | string[]> = {
+    
     labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     datasets: [ {
-      data: [ 170.3, 108.75, 125, 150, 182, 217, 219, 257, 294, 317, 450, 511]
+      data: [ 170.3, 108.75, 125, 150, 182, 217, 219, 257, 294, 317, 450, 511],
+     
+
     } ]
   };
   public pieChartType: ChartType = 'line';
