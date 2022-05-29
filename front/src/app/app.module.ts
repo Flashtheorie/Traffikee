@@ -26,6 +26,8 @@ import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.compone
 import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymentsuccessredirect.component';
 import { AdminComponent } from './admin/admin.component';
 import { NgChartsModule } from 'ng2-charts';
+import { AdminusersComponent } from './adminusers/adminusers.component';
+import { AdminwebsitesComponent } from './adminwebsites/adminwebsites.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,9 @@ import { NgChartsModule } from 'ng2-charts';
      CheckoutComponent,
      PaymentsuccessComponent,
      PaymentsuccessredirectComponent,
-     AdminComponent
+     AdminComponent,
+     AdminusersComponent,
+     AdminwebsitesComponent
   ],
   imports: [
     BrowserModule,
