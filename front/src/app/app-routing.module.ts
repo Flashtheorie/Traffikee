@@ -9,6 +9,8 @@ import { RedirectComponent } from './redirect/redirect.component';
 import { RegisterComponent } from './register/register.component';
 import { WebsitesComponent } from './websites/websites.component';
 import { AuthGuard } from './auth.guard';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -19,7 +21,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'websites', component: WebsitesComponent, canActivate: [AuthGuard]},
   { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
+  { path: 'checkout', component: CheckoutComponent},
+  { path: 'paymentsuccess', component: PaymentsuccessComponent},
 
+
+
+  
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent}
 ];
 

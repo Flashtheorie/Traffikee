@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require("cors");
 const PORT = process.env.PORT || 3001;
 var ObjectId = require('mongodb').ObjectId;
-
+const stripe = require('stripe')('sk_test_51L3TjKFkiBiEQqb0n6Vqk95NVCUfE6o09NyCSGOQTkqblDYF8VkxW37tZGNTzkzpygsCwq3A1jEbSHsqi5ZfWaR900ddEMnogp');
 
 app.use(cors());
 app.use(function(request, response, next) {
@@ -179,6 +179,49 @@ app.get('/delete/:id', function (req, res) {
     })
 })
 
+
+
+
+// Payment stripe
+
+app.post('/create-checkout-session/', async (req, res) => {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: '100 points',
+            },
+            unit_amount: 100,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: 'http://localhost:4200/success',
+      cancel_url: 'http://localhost:4200/cancel',
+    });
+  
+    res.json({ id: session.id });
+  });
+
+  app.post('/order/success', async (req, res) => {
+    const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+    const customer = await stripe.customers.retrieve(session.customer);
+  
+    res.send(`
+      <html>
+        <body>
+          <h1>Thanks for your order, ${customer.name}!</h1>
+        </body>
+      </html>
+    `);
+  });
+
+
+  
 app.listen(PORT, function(){
      console.log("Node Js Server is Running on port " + PORT);
  })

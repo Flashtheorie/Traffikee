@@ -17,10 +17,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { WebsitesComponent } from './websites/websites.component';
 import { ProfilComponent } from './profil/profil.component';
-
+import { NgxStripeModule } from 'ngx-stripe';
 import { UrlPipe } from './url.pipe';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { ErrorComponent } from './error/error.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import { ErrorComponent } from './error/error.component';
     
     UrlPipe,
      SplashScreenComponent,
-     ErrorComponent
+     ErrorComponent,
+     CheckoutComponent,
+     PaymentsuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ import { ErrorComponent } from './error/error.component';
     HttpClientModule,
     FormsModule,
     RouterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxStripeModule.forRoot('pk_test_51L3TjKFkiBiEQqb0Aheqhc12TjQVNlMrj7DlZnRxx008J2PSqjvrqzIOrHIMr5N6YaU1BehQIikijwzOYplf737r00ZGkrz2y6'),
   ],
   providers: [],
   bootstrap: [AppComponent],
