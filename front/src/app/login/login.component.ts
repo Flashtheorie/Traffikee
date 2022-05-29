@@ -7,10 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
-  @Input() public  ErrorTitle: string;
-  @Input() public   ErrorMessage: string;
-  title: 'Incorrect credentials';
-  message: 'This password do not match any credentials'
+
+  title :string = 'Incorrect credentials';
+  message :string = 'This password do not match any credentials';
+
   
   input: any = {
     email: "",

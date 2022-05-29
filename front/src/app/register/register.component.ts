@@ -12,10 +12,12 @@ import {
 export class RegisterComponent {
   @Input() public  ErrorTitle: string;
   @Input() public   ErrorMessage: string;
-  title: 'Oh oh';
-  message: 'This email is already in use'
+  title :string = "You can't use this email address";
+  message :string = 'This email is already in use';
 
   data: any;
+
+
   error: boolean | undefined;
   errorMessage: string | undefined;
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { LoginComponent } from '../login/login.component';
 @Component({
@@ -18,8 +18,8 @@ import { LoginComponent } from '../login/login.component';
   ]
 })
 export class ErrorComponent {
- title: string;
- message: string;
+  @Input() ErrorTitle: string;
+  @Input() ErrorMessage: string;
 
   isNotification = true;
   
