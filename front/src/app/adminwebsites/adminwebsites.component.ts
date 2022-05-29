@@ -10,7 +10,13 @@ import { RankService } from '../rank.service';
 })
 export class AdminwebsitesComponent implements OnInit {
   ItemsArray: any[] = [];
- 
+  
+  delete(id){
+    this.http.get('http://localhost:3001/deletewebsite/' + id)
+     .subscribe(result => {});
+     window.location.reload();
+  }
+
   constructor(private rankService: RankService, private http: HttpClient) {}
   ngOnInit() {
     this.rankService.getData().subscribe((res: any[]) => {
