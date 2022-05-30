@@ -1,6 +1,9 @@
 import { Component, Input, OnInit, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent  {
   title :string = 'Incorrect credentials';
   message :string = 'This password do not match any credentials';
-
+  cookieValue: string;
   
   input: any = {
     email: "",
@@ -21,9 +24,11 @@ export class LoginComponent  {
     'mon-entete-personnalise':'maValeur'
   })
 };
+
 constructor(
   public http: HttpClient,
   private router: Router,
+  private cookieService: CookieService
   ){
 
 
@@ -46,6 +51,8 @@ defineIsError(){
             const removed = removeQuotes.replaceAll('"', '');
             sessionStorage.setItem('id', removed)
            this.router.navigate(['home'])
+           this.cookieService.set( 'id', removed ); // To Set Cookie
+          this.cookieValue = this.cookieService.get('id'); // To Get Cookie
           }
           
           

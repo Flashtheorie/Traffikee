@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-navbaronline',
   templateUrl: './navbaronline.component.html',
@@ -12,6 +12,7 @@ export class NavbaronlineComponent  {
   }
   logout(){
     sessionStorage.clear();
+    this.cookieService.set('id', '', -1);
 
   }
 
@@ -20,7 +21,8 @@ export class NavbaronlineComponent  {
   users = [];
 
 
- constructor(private http: HttpClient){
+ constructor(private http: HttpClient,
+  private cookieService: CookieService){
   this.http.get(this.url).toPromise().then((data: any) => {
   this.users = data
   })

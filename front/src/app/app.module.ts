@@ -30,6 +30,9 @@ import { AdminusersComponent } from './adminusers/adminusers.component';
 import { AdminwebsitesComponent } from './adminwebsites/adminwebsites.component';
 import { PaymentsuccessredirectcentComponent } from './paymentsuccessredirectcent/paymentsuccessredirectcent.component';
 import { PaymentsuccessredirectmilleComponent } from './paymentsuccessredirectmille/paymentsuccessredirectmille.component';
+import { CookieService } from 'ngx-cookie-service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +70,9 @@ import { PaymentsuccessredirectmilleComponent } from './paymentsuccessredirectmi
     NgxStripeModule.forRoot('pk_test_51L3TjKFkiBiEQqb0Aheqhc12TjQVNlMrj7DlZnRxx008J2PSqjvrqzIOrHIMr5N6YaU1BehQIikijwzOYplf737r00ZGkrz2y6'),
     NgChartsModule
   ],
-  providers: [],
+  providers: [
+    CookieService
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
