@@ -17,6 +17,7 @@ import { AdminusersComponent } from './adminusers/adminusers.component';
 import { AdminwebsitesComponent } from './adminwebsites/adminwebsites.component';
 import { PaymentsuccessredirectcentComponent} from './paymentsuccessredirectcent/paymentsuccessredirectcent.component'
 import { PaymentsuccessredirectmilleComponent } from './paymentsuccessredirectmille/paymentsuccessredirectmille.component';
+import { AdminGuard } from './admin.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
@@ -31,9 +32,9 @@ const routes: Routes = [
   { path: 'paymentsuccessredirect', component: PaymentsuccessredirectComponent},
   { path: 'paymentsuccessredirectcent', component: PaymentsuccessredirectcentComponent}, 
   { path: 'paymentsuccessredirectmille', component: PaymentsuccessredirectmilleComponent}, 
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-  { path: 'adminusers', component: AdminusersComponent, canActivate: [AuthGuard]},
-  { path: 'adminwebsites', component: AdminwebsitesComponent, canActivate: [AuthGuard]},
+  { path: 'admin', component: AdminComponent, canActivate: [AdminGuard]},
+  { path: 'adminusers', component: AdminusersComponent, canActivate: [AdminGuard]},
+  { path: 'adminwebsites', component: AdminwebsitesComponent, canActivate: [AdminGuard]},
 
   
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent}
