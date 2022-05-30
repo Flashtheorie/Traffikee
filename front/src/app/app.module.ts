@@ -28,6 +28,8 @@ import { AdminComponent } from './admin/admin.component';
 import { NgChartsModule } from 'ng2-charts';
 import { AdminusersComponent } from './adminusers/adminusers.component';
 import { AdminwebsitesComponent } from './adminwebsites/adminwebsites.component';
+import { PaymentsuccessredirectcentComponent } from './paymentsuccessredirectcent/paymentsuccessredirectcent.component';
+import { PaymentsuccessredirectmilleComponent } from './paymentsuccessredirectmille/paymentsuccessredirectmille.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { AdminwebsitesComponent } from './adminwebsites/adminwebsites.component'
      PaymentsuccessredirectComponent,
      AdminComponent,
      AdminusersComponent,
-     AdminwebsitesComponent
+     AdminwebsitesComponent,
+     PaymentsuccessredirectcentComponent,
+     PaymentsuccessredirectmilleComponent
   ],
   imports: [
     BrowserModule,

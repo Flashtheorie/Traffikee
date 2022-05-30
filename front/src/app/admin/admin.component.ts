@@ -36,6 +36,7 @@ websites = [];
 DataTransactions = [];
 
 transactions = [];
+
   constructor(private listusersService: ListusersService,
               private http: HttpClient,
               private rankService: RankService,

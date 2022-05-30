@@ -15,7 +15,8 @@ import { PaymentsuccessredirectComponent } from './paymentsuccessredirect/paymen
 import { AdminComponent } from './admin/admin.component';
 import { AdminusersComponent } from './adminusers/adminusers.component';
 import { AdminwebsitesComponent } from './adminwebsites/adminwebsites.component';
-
+import { PaymentsuccessredirectcentComponent} from './paymentsuccessredirectcent/paymentsuccessredirectcent.component'
+import { PaymentsuccessredirectmilleComponent } from './paymentsuccessredirectmille/paymentsuccessredirectmille.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
   { path: 'paymentsuccess', component: PaymentsuccessComponent},
   { path: 'paymentsuccessredirect', component: PaymentsuccessredirectComponent},
+  { path: 'paymentsuccessredirectcent', component: PaymentsuccessredirectcentComponent}, 
+  { path: 'paymentsuccessredirectmille', component: PaymentsuccessredirectmilleComponent}, 
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
   { path: 'adminusers', component: AdminusersComponent, canActivate: [AuthGuard]},
   { path: 'adminwebsites', component: AdminwebsitesComponent, canActivate: [AuthGuard]},

@@ -208,6 +208,39 @@ app.get('/paymentsuccessredirect/:userid/:points', function(req, res){
 })
 
 
+app.get('/paymentsuccessredirectcent/:userid/:points', function(req, res){
+    db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
+    {
+      $inc: {
+        points: parseInt(req.params.points)
+      }
+    }, function(){
+        db.collection('transactions').insertOne({
+            amount: 10,
+            id: req.params.userid,
+            date: new Date ()
+
+        })
+    })
+})
+
+app.get('/paymentsuccessredirectmille/:userid/:points', function(req, res){
+    db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
+    {
+      $inc: {
+        points: parseInt(req.params.points)
+      }
+    }, function(){
+        db.collection('transactions').insertOne({
+            amount: 80,
+            id: req.params.userid,
+            date: new Date ()
+
+        })
+    })
+})
+
+
 
  app.get('/gettotaltransactions', function(req, res) {
     db.collection('transactions').aggregate([ {
