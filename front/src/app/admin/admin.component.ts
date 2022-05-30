@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-
+import { ListusersService } from '../listusers.service'
+import { RankService } from '../rank.service'
+import { TransactionsService } from '../transactions.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -27,13 +30,31 @@ export class AdminComponent implements OnInit {
     } ]
   };
   public pieChartType: ChartType = 'line';
-  http: any;
-  data = [];
+data = [];
+users = [];
+websites = [];
+DataTransactions = [];
 
-
-  constructor() { }
+transactions = [];
+  constructor(private listusersService: ListusersService,
+              private http: HttpClient,
+              private rankService: RankService,
+              private transactionsService: TransactionsService) { }
 
   ngOnInit(): void {
+    this.listusersService.getData().subscribe((res: any[]) => {
+      this.users = res;
+    });
+    this.rankService.getData().subscribe((res: any[]) => {
+      this.websites = res;
+    });
+
+    this.transactionsService.getData().subscribe((res: any[]) => {
+      this.DataTransactions = res;
+    })
+
+    this.http.get('http://localhost:3001/gettotaltransactions').toPromise().then((totalTransactions: any) => {
+      this.transactions = totalTransactions
   }
 
-}
+)}}

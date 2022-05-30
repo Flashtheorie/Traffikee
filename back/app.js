@@ -209,7 +209,27 @@ app.get('/paymentsuccessredirect/:userid/:points', function(req, res){
 
 
 
+ app.get('/gettotaltransactions', function(req, res) {
+    db.collection('transactions').aggregate([ {
+        $group: {
+           _id: null,
+           total: {
+              $sum: "$amount"
+           }
+        }
+     } ] ).toArray(function (err,user){
+         res.json(user);
+     })
+ })
 
+
+ // fetch transactions data
+
+ app.get('/api/transactions', function (req, res) {
+     db.collection('transactions').find({}).toArray(function (err,transactionsData){
+         res.json(transactionsData);
+     })
+ })
 
 
 
