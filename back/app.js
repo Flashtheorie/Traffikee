@@ -190,6 +190,23 @@ app.get('/delete/:id', function (req, res) {
     })
 })
 
+// Payment :
+app.get('/paymentsuccessredirect/:userid/:points', function(req, res){
+    db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
+    {
+      $inc: {
+        points: parseInt(req.params.points)
+      }
+    }, function(){
+        db.collection('transactions').insertOne({
+            amount: 1,
+            id: req.params.userid,
+            date: new Date("YYYY-mm-dd")
+
+        })
+    })
+})
+
 
 
 
