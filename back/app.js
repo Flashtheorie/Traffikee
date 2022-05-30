@@ -201,7 +201,7 @@ app.get('/paymentsuccessredirect/:userid/:points', function(req, res){
         db.collection('transactions').insertOne({
             amount: 1,
             id: req.params.userid,
-            date: new Date("YYYY-mm-dd")
+            date: new Date ()
 
         })
     })
