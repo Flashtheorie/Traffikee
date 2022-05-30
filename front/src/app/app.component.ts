@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'front';
+  erreur = 'front';
   cookieValue: string;
   constructor(private cookieService: CookieService) { } 
   
