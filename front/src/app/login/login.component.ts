@@ -17,6 +17,7 @@ export class LoginComponent  {
   input: any = {
     email: "",
     password: "",
+    cookies: ""
 };
  optionRequete = {
   headers: new HttpHeaders({ 
@@ -51,8 +52,12 @@ defineIsError(){
             const removed = removeQuotes.replaceAll('"', '');
             sessionStorage.setItem('id', removed)
            this.router.navigate(['home'])
-           this.cookieService.set( 'id', removed ); // To Set Cookie
-          this.cookieValue = this.cookieService.get('id'); // To Get Cookie
+           if (this.input['cookies'] == true) {
+            this.cookieService.set( 'id', removed );
+           }
+           //console.log(this.input['cookies'])
+            // To Set Cookie
+          //this.cookieValue = this.cookieService.get('id'); // To Get Cookie
           }
           
           
