@@ -18,15 +18,17 @@
             <button *ngIf="getSessionInfos() != null" routerLink="/addwebsite" type="button" class="mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto text-green-800 hover:text-green-900">
                 Add your website
               </button>
-
+              <button *ngIf="getSessionInfos() != null" routerLink="/profil" type="button" class="ml-2 mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-slate-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto text-slate-800 hover:text-slate-900">
+                Buy points
+              </button>
               
 
 
-              <button *ngIf="getSessionInfos() == null" routerLink="/login" type="button" class=" mx-2 mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto">
+              <button *ngIf="getSessionInfos() == null" routerLink="/login" type="button" class="mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto text-green-800 hover:text-green-900">
                 Sign in to add your website
               </button>
 
-              <button *ngIf="getSessionInfos() == null" routerLink="/register" type="button" class="mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-slate-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto">
+              <button *ngIf="getSessionInfos() == null" routerLink="/register" type="button" class="ml-2 mt-10 font-mono inline-flex items-center justify-center rounded-md border border-transparent bg-slate-600 px-4 py-2 text-lg font-medium text-white shadow-sm hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto text-slate-800 hover:text-slate-900">
                 Sign up
               </button>
 
