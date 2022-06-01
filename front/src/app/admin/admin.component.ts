@@ -20,6 +20,11 @@ export class AdminComponent implements OnInit {
     }
     
   };
+  data = [];
+  users = [];
+  websites = [];
+  DataTransactions = [];
+
   public pieChartData: ChartData<'pie', number[], string | string[]> = {
     
     labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -30,10 +35,7 @@ export class AdminComponent implements OnInit {
     } ]
   };
   public pieChartType: ChartType = 'line';
-data = [];
-users = [];
-websites = [];
-DataTransactions = [];
+
 
 transactions = [];
 

@@ -36,7 +36,7 @@ website: any = {
   user: any[] = [];
   
   headers = ["rank","url", "points", "allocate points", "modify"];
-  ItemsArray: any[] = [];
+  ItemsArray: any[] = undefined;
   
   
   delete(id){
