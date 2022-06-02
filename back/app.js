@@ -143,11 +143,16 @@ app.get('/api/websites/:id', function(req, res){
 // Create new website
 
 app.post('/api/createwebsite/:id', function(req, res){
+    if (req.body.url.includes('http')){
     db.collection('websites').insertOne({
         url : req.body.url,
         points: 0,
         id: req.params.id
     })
+} // Doesnt contain http 
+else {
+    res.json('error')
+}
 })
 
 // Delete website
