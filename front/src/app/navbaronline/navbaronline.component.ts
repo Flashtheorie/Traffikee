@@ -17,7 +17,7 @@ export class NavbaronlineComponent  {
   }
 
 
-  url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
+  url = 'https://traffikee.com/api/users/' + sessionStorage.getItem('id');
   users = [];
 
 

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class YourwebsitesService {
-  private api: string = 'http://localhost:3001/websites/' + sessionStorage.getItem('id');
+  private api: string = 'https://traffikee.com/api/websites/' + sessionStorage.getItem('id');
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ export class RankingComponent implements OnInit {
 
   visitlink(url){
     const urlJSON = JSON.stringify(url);
-    this.http.get('http://localhost:3001/visitlink/' + sessionStorage.getItem('id'))
+    this.http.get('https://traffikee.com/api/visitlink/' + sessionStorage.getItem('id'))
        .subscribe(result => {});
        setTimeout(function(){
         window.location.reload();

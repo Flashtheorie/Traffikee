@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UserDataService {
 
  
-  private api: string = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
+  private api: string = 'https://traffikee.com/api/users/' + sessionStorage.getItem('id');
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

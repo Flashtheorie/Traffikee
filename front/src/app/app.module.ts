@@ -31,7 +31,7 @@ import { AdminwebsitesComponent } from './adminwebsites/adminwebsites.component'
 import { PaymentsuccessredirectcentComponent } from './paymentsuccessredirectcent/paymentsuccessredirectcent.component';
 import { PaymentsuccessredirectmilleComponent } from './paymentsuccessredirectmille/paymentsuccessredirectmille.component';
 import { CookieService } from 'ngx-cookie-service';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -71,7 +71,8 @@ import { CookieService } from 'ngx-cookie-service';
     NgChartsModule
   ],
   providers: [
-    CookieService
+    CookieService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent],
   schemas: [

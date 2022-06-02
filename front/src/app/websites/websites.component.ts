@@ -31,8 +31,8 @@ website: any = {
     return sessionStorage.getItem('id'); 
   }
 
-  url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
-  api: string = 'http://localhost:3001/websites/' + sessionStorage.getItem('id');
+  url = 'https://traffikee.com/api/users/' + sessionStorage.getItem('id');
+  api: string = 'https://traffikee.com/api/websites/' + sessionStorage.getItem('id');
   user: any[] = [];
   
   headers = ["rank","url", "points", "allocate points", "modify"];
@@ -40,13 +40,13 @@ website: any = {
   
   
   delete(id){
-    this.http.get('http://localhost:3001/deletewebsite/' + id)
+    this.http.get('https://traffikee.com/api/deletewebsite/' + id)
      .subscribe(result => {});
      window.location.reload();
   }
   
 addpoints(id, amount){
-  this.http.get('http://localhost:3001/addpoints/' + id + '/' + amount + '/' + sessionStorage.getItem('id'))
+  this.http.get('https://traffikee.com/api/addpoints/' + id + '/' + amount + '/' + sessionStorage.getItem('id'))
      .subscribe(result => {});
      window.location.reload();
 }

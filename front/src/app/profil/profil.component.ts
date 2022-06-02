@@ -46,8 +46,8 @@ export class ProfilComponent  {
     window.history.back();
   }
 
-  url = 'http://localhost:3001/users/' + sessionStorage.getItem('id');
-  urldelete = 'http://localhost:3001/delete/' + sessionStorage.getItem('id');
+  url = 'https://traffikee.com/api/users/' + sessionStorage.getItem('id');
+  urldelete = 'https://traffikee.com/api/delete/' + sessionStorage.getItem('id');
   users = [];
 
 

@@ -12,7 +12,7 @@ export class AdminwebsitesComponent implements OnInit {
   ItemsArray: any[] = [];
   
   delete(id){
-    this.http.get('http://localhost:3001/deletewebsite/' + id)
+    this.http.get('https://traffikee.com/api/deletewebsite/' + id)
      .subscribe(result => {});
      window.location.reload();
   }

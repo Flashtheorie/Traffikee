@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RankService {
-  private api: string = 'http://localhost:3001';
+  private api: string = 'https://traffikee.com/api/sites';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

@@ -56,7 +56,7 @@ transactions = [];
       this.DataTransactions = res;
     })
 
-    this.http.get('http://localhost:3001/gettotaltransactions').toPromise().then((totalTransactions: any) => {
+    this.http.get('https://traffikee.com/api/gettotaltransactions').toPromise().then((totalTransactions: any) => {
       this.transactions = totalTransactions
   }
 

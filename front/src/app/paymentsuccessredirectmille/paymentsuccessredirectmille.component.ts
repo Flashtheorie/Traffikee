@@ -9,7 +9,7 @@ import {Router} from "@angular/router"
   styleUrls: ['./paymentsuccessredirectmille.component.css']
 })
 export class PaymentsuccessredirectmilleComponent implements OnInit {
-url: string = 'http://localhost:3001/paymentsuccessredirectmille/' + sessionStorage.getItem('id') + '/10000';
+url: string = 'https://traffikee.com/api/paymentsuccessredirectmille/' + sessionStorage.getItem('id') + '/10000';
   constructor(
     private router: Router,
     private http: HttpClient

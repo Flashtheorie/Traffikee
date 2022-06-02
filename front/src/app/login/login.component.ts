@@ -41,7 +41,7 @@ defineIsError(){
   }, 3000);
 }
   login(){
-    this.http.post('http://localhost:3001/login', this.input)
+    this.http.post('https://traffikee.com/api/login', this.input)
         .subscribe(result => {
           if (result == "error") {
             this.isError = true;

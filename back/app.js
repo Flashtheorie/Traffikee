@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 mongoose.connect(config.DB_URI, function(err, db){
     if (err) throw err;
     console.log('Connected to database');
-}, { useNewUrlParser: true });
+});
 
 
 app.use(function(req, res, next) {
@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
 
 
 // homepage : Display the websites and update the rank
-app.get('/', function(req, res){
+app.get('/api/sites', function(req, res){
 rank = 0;
 
 db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
@@ -64,7 +64,7 @@ db.collection('websites').find({}).sort({  "points": -1 }).forEach(doc => {
 
 
 // list all users
-app.get('/allusers', function(req, res) {
+app.get('/api/allusers', function(req, res) {
   db.collection('users').find({}).sort({ points: -1 }).toArray(function(err, data){
     if (err) throw err;
     res.json(data)
@@ -74,7 +74,7 @@ app.get('/allusers', function(req, res) {
 
 
 // Register the user
-app.post('/register', function(req, res){
+app.post('/api/register', function(req, res){
 
     db.collection('users').findOne({ email: req.body.email}, function(err, data){
         if( data == null || data == '') {
@@ -96,7 +96,7 @@ app.post('/register', function(req, res){
 // Log in the user
 
 
-app.post('/login', function(req, res){
+app.post('/api/login', function(req, res){
     db.collection('users').find({ email: req.body.email, password: req.body.password}).toArray(function(err, user){
         if (err) throw err;
         if (user[0] != null)
@@ -120,7 +120,7 @@ app.post('/login', function(req, res){
 
 
 // Fetch data from the connected user
- app.get('/users/:id', function(req, res){
+ app.get('/api/users/:id', function(req, res){
     db.collection('users').find({ _id: ObjectId(`${req.params.id}`)}).toArray(function(err, user){
         if (err) throw err;
         res.json(user)
@@ -128,7 +128,7 @@ app.post('/login', function(req, res){
 })
 
 // Fetch the websites from user
-app.get('/websites/:id', function(req, res){
+app.get('/api/websites/:id', function(req, res){
     db.collection('websites').find({ id: req.params.id }).sort({ points: -1 }).toArray(function(err, user){
         if (err) throw err;
         res.json(user)
@@ -138,7 +138,7 @@ app.get('/websites/:id', function(req, res){
 
 // Create new website
 
-app.post('/createwebsite/:id', function(req, res){
+app.post('/api/createwebsite/:id', function(req, res){
     db.collection('websites').insertOne({
         url : req.body.url,
         points: 0,
@@ -147,7 +147,7 @@ app.post('/createwebsite/:id', function(req, res){
 })
 
 // Delete website
-app.get('/deletewebsite/:id', function(req, res){
+app.get('/api/deletewebsite/:id', function(req, res){
     db.collection('websites').deleteOne({ _id: ObjectId(`${req.params.id}`)}, function(err, user){
         if (err) throw err;
         res.json(user)
@@ -155,7 +155,7 @@ app.get('/deletewebsite/:id', function(req, res){
 })
 
 // add points to website
-app.get('/addpoints/:id/:amount/:userid', function(req, res){
+app.get('/api/addpoints/:id/:amount/:userid', function(req, res){
     db.collection('websites').updateOne({  _id: ObjectId(`${req.params.id}`) },
     {
       $inc: {
@@ -171,7 +171,7 @@ app.get('/addpoints/:id/:amount/:userid', function(req, res){
     })
 })
 
-app.get('/visitlink/:userid', function(req, res){
+app.get('/api/visitlink/:userid', function(req, res){
     db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
     {
       $inc: {
@@ -181,7 +181,7 @@ app.get('/visitlink/:userid', function(req, res){
 })
 
 // Delete user
-app.get('/delete/:id', function (req, res) {
+app.get('/api/delete/:id', function (req, res) {
     db.collection('users').deleteOne({  _id: ObjectId(`${req.params.id}`) },
     {
       
@@ -191,7 +191,7 @@ app.get('/delete/:id', function (req, res) {
 })
 
 // Payment :
-app.get('/paymentsuccessredirect/:userid/:points', function(req, res){
+app.get('/api/paymentsuccessredirect/:userid/:points', function(req, res){
     db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
     {
       $inc: {
@@ -208,7 +208,7 @@ app.get('/paymentsuccessredirect/:userid/:points', function(req, res){
 })
 
 
-app.get('/paymentsuccessredirectcent/:userid/:points', function(req, res){
+app.get('/api/paymentsuccessredirectcent/:userid/:points', function(req, res){
     db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
     {
       $inc: {
@@ -224,7 +224,7 @@ app.get('/paymentsuccessredirectcent/:userid/:points', function(req, res){
     })
 })
 
-app.get('/paymentsuccessredirectmille/:userid/:points', function(req, res){
+app.get('/api/paymentsuccessredirectmille/:userid/:points', function(req, res){
     db.collection('users').updateOne({  _id: ObjectId(`${req.params.userid}`) },
     {
       $inc: {
@@ -242,7 +242,7 @@ app.get('/paymentsuccessredirectmille/:userid/:points', function(req, res){
 
 
 
- app.get('/gettotaltransactions', function(req, res) {
+ app.get('/api/gettotaltransactions', function(req, res) {
     db.collection('transactions').aggregate([ {
         $group: {
            _id: null,

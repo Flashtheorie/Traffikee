@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TransactionsService {
-  private api: string = 'http://localhost:3001/api/transactions';
+  private api: string = 'https://traffikee.com/api/api/transactions';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

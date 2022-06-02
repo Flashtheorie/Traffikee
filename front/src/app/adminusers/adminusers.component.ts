@@ -12,7 +12,7 @@ export class AdminusersComponent implements OnInit {
 
 
   delete(id: string){
-    this.http.get('http://localhost:3001/delete/' + id).toPromise().then((data: any) => {
+    this.http.get('https://traffikee.com/api/delete/' + id).toPromise().then((data: any) => {
       //sessionStorage.clear();
       window.location.reload();
    
