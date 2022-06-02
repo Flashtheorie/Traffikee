@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 mongoose.connect(config.DB_URI, function(err, db){
     if (err) throw err;
     console.log('Connected to database');
-});
+}, { useNewUrlParser: true });
 
 
 app.use(function(req, res, next) {

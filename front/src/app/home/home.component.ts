@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
 
   faq = [
     {
-      question: 'What is Traffikee ?',
+      question: 'Who are we ?',
       answer: 'We are Venom'
     }, 
     {
