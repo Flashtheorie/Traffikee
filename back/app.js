@@ -76,6 +76,7 @@ app.get('/api/allusers', function(req, res) {
 // Register the user
 app.post('/api/register', function(req, res){
 
+  if (req.body.email.includes('@')){
     db.collection('users').findOne({ email: req.body.email}, function(err, data){
         if( data == null || data == '') {
             db.collection('users').insertOne({
@@ -90,6 +91,9 @@ app.post('/api/register', function(req, res){
             res.json('error')
         }
     })
+  } else {
+      res.json('error')
+  }
     
 })
 

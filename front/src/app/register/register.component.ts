@@ -11,8 +11,8 @@ import {
 })
 export class RegisterComponent {
 
-  title :string = "You can't use this email address";
-  message :string = 'This email is already in use';
+  title :string = "This email is not valid";
+  message :string = 'The account already exists or it is not an email address';
 
   data: any;
 
