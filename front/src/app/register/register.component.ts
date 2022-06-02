@@ -40,7 +40,7 @@ defineIsError(){
 }
 
 register(){
-    this.http.post('http://localhost:3001/register', this.input)
+    this.http.post('https://traffikee.com/api/register', this.input)
         .subscribe(result => {
           console.log( result)
           if (result == "error")
