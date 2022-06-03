@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require("cors");
 const PORT = process.env.PORT || 3001;
 var ObjectId = require('mongodb').ObjectId;
-const stripe = require('stripe')('sk_test_51L3TjKFkiBiEQqb0n6Vqk95NVCUfE6o09NyCSGOQTkqblDYF8VkxW37tZGNTzkzpygsCwq3A1jEbSHsqi5ZfWaR900ddEMnogp');
+
 
 app.use(cors());
 app.use(function(request, response, next) {
