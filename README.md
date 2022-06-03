@@ -1,3 +1,5 @@
+![Traffikee](https://i.imgur.com/iCESFd3.png)
+
 # Traffikee is an advertising leaderboard.
 
 You add your website to the pool of websites.
@@ -7,6 +9,8 @@ The more points your website have, the higher it will be on the leaderboard.
 
 
 Visit the website on [https://traffikee.com](https://traffikee.com) 
+
+
 # To do list
 
 - Faire le bouton de modification de profil
