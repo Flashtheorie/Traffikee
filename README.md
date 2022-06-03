@@ -16,5 +16,5 @@ Visit the website on [https://traffikee.com](https://traffikee.com)
 - Faire le bouton de modification de profil
 - ~~Créer le script de vérification si le site contient bien "http"~~
 - ~~Créer le script de vérification si l'email d'inscription est bien un email~~
-- Modifier les liens de Stripe pour mettre les liens de paiments réels et pas paiements test
+- ~~Modifier les liens de Stripe pour mettre les liens de paiments réels et pas paiements test~~
 - ~~Reussir à passer le site sur un serveur~~
