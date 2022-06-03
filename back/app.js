@@ -149,6 +149,7 @@ app.post('/api/createwebsite/:id', function(req, res){
         points: 0,
         id: req.params.id
     })
+    res.json('good')
 } // Doesnt contain http 
 else {
     res.json('error')

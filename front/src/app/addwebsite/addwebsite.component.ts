@@ -8,9 +8,20 @@ import {  Router } from '@angular/router';
   styleUrls: ['./addwebsite.component.css']
 })
 export class AddwebsiteComponent {
+  title :string = "Wrong url";
+  message :string = 'The url must contain "http" or "https"';
+
+
   getSessionInfos(){
     return sessionStorage.getItem('id'); 
   }
+  isError: boolean = false
+  defineIsError(){
+    setTimeout(() => {
+      this.isError = false;
+    }, 3000);
+  }
+
 
 
   input: any = {
@@ -35,9 +46,19 @@ this.router = router;
 login(){
    this.http.post('https://traffikee.com/api/createwebsite/' + sessionStorage.getItem('id'), this.input)
     .subscribe(result => {
-      
+      if (result == "error")
+          {
+            this.isError = true;
+            this.defineIsError();
+          }
+          if (result != "error") {
+            //
+            console.log('pas erreur : ' + JSON.stringify(result));
+          }
+          this.router.navigate(['/websites'])
+          
     });
-    this.router.navigate(['/websites'])
+    
 }
 
 }
