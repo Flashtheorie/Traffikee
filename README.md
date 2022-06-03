@@ -8,7 +8,7 @@ The more points your website have, the higher it will be on the leaderboard.
 # To do list
 
 - Faire le bouton de modification de profil
-- Créer le script de vérification si le site contient bien "http"
-- Créer le script de vérification si l'email d'inscription est bien un email
+- ~~Créer le script de vérification si le site contient bien "http"~~
+- ~~Créer le script de vérification si l'email d'inscription est bien un email~~
 - Modifier les liens de Stripe pour mettre les liens de paiments réels et pas paiements test
-- Reussir à passer le site sur un serveur
+- ~~Reussir à passer le site sur un serveur~~
