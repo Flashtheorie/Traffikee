@@ -29,7 +29,7 @@
   }
   
   .app-logo {
-      /*background: url("./../../assets/three-dots.svg"); */
+    
     background-repeat: no-repeat;
     max-width: 100%;
     background-position: center;
@@ -42,7 +42,7 @@
   }
   
   .app-loader {
-   
+    background: url("/assets/three-dots.svg");
     background-repeat: no-repeat;
     max-width: 50%;
     background-position: center;
