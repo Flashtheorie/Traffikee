@@ -9,16 +9,16 @@ export class HomeComponent implements OnInit {
 
   faq = [
     {
-      question: 'Who are we ?',
-      answer: 'We are Venom'
+      question: "What is Traffikee ?",
+      answer: "Traffikee is an advertising leaderboard, You add your website to the pool of websites. You can click on other websites to earn points. Those points can then be used to promote your own website. The more points your website have, the higher it will be on the leaderboard. Thus, the more traffic you'll get"
     }, 
     {
-      question: 'What does Trafikee do ?',
-      answer: 'We poo.'
+      question: 'Why use Traffikee ?',
+      answer: "You can use traffikee to promote your website and get visitors."
     },
     {
-      question: 'What',
-      answer: ''
+      question: 'Is Traffikee free ?',
+      answer: "Yes,you can use Traffikee absolutely for free, however, if you wish to make your website go high faster, you can buy points."
     }
   ]
   getSessionInfos(){
