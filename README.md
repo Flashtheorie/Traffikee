@@ -5,6 +5,8 @@ You can click on other websites to earn points.
 Those points can then be used to promote your own website.
 The more points your website have, the higher it will be on the leaderboard.
 
+
+Visit the website on [https://traffikee.com](https://traffikee.com) 
 # To do list
 
 - Faire le bouton de modification de profil
