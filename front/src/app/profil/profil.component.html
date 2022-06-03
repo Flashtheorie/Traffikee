@@ -16,7 +16,7 @@
                     <div class='w-full md:w-full px-3 mb-6' >
                         <label class='block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2' for='grid-text-1'>
                             email address</label>
-                        <input value="{{ user.email }}" type class='appearance-none block w-full bg-white text-gray-900 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Enter new email'  required>
+                        <input value="{{ user.email }}"   type class='appearance-none block w-full bg-white text-gray-900 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Enter new email'  required>
                     </div>
                     <div class='w-full md:w-full px-3 mb-6'>
                         <label class='block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2' for='grid-text-1'>
@@ -28,8 +28,8 @@
                         <button (click)="rewindHistory()"  class="appearance-none bg-red-500 text-gray-900 px-4 py-2  rounded-md mr-3" type="submit">
                             Cancel <i class="fa-solid fa-xmark"></i></button>
 
-                        <button class="appearance-none bg-green-500 text-gray-900 px-4 py-2  rounded-md mr-3" type="submit">
-                            save changes <i class="fa-solid fa-check"></i></button>
+                        <button class="appearance-none bg-green-100 text-gray-900 px-4 py-2  rounded-md mr-3 cursor-not-allowed" type="submit">
+                            save changes <span class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">coming soon</span></button>
 
                     </div>
             </form>

@@ -274,7 +274,15 @@ app.get('/api/paymentsuccessredirectmille/:userid/:points', function(req, res){
      })
  })
 
-
+// Modify the profile
+app.post('/api/modifyprofile/:userid', function(req, res){
+    db.collection('users').updateOne({ _id: ObjectId(`${req.params.userid}`) }).toArray(function (err,){
+        email: req.body.email
+        password: req.body.password
+    }, function (err,data){
+        res.json(data);
+    })
+})
 
   
 app.listen(PORT, function(){

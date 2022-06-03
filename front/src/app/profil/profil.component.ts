@@ -48,8 +48,12 @@ export class ProfilComponent  {
 
   url = 'https://traffikee.com/api/users/' + sessionStorage.getItem('id');
   urldelete = 'https://traffikee.com/api/delete/' + sessionStorage.getItem('id');
+  urlmodifyprofile = 'http://localhost:3001/api/modifyprofile/' + sessionStorage.getItem('id')
   users = [];
-
+  newprofile : any =  {
+    email: '',
+    password: ''
+  }
 
   delete(){
     this.http.get(this.urldelete).toPromise().then((data: any) => {
@@ -57,6 +61,12 @@ export class ProfilComponent  {
 
    
      
+    })
+  }
+
+  modifyprofile(){
+    this.http.get(this.urlmodifyprofile).toPromise().then((data: any) => {
+
     })
   }
 
