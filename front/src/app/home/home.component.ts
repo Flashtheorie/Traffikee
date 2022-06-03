@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   faq = [
     {
       question: "What is Traffikee ?",
-      answer: "Traffikee is an advertising leaderboard, You add your website to the pool of websites. You can click on other websites to earn points. Those points can then be used to promote your own website. The more points your website have, the higher it will be on the leaderboard. Thus, the more traffic you'll get"
+      answer: "Traffikee is an advertising leaderboard, You add your website to the pool of websites. You can click on other websites to earn points. Those points can then be used to promote your own website. The more points your website has, the higher it will be on the leaderboard, the more traffic you'll get"
     }, 
     {
       question: 'Why use Traffikee ?',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     },
     {
       question: 'Is Traffikee free ?',
-      answer: "Yes,you can use Traffikee absolutely for free, however, if you wish to make your website go high faster, you can buy points."
+      answer: "Yes, you can use Traffikee for free, however, if you wish to make your website to rank higher, faster, you can buy points."
     }
   ]
   getSessionInfos(){
